@@ -26,7 +26,7 @@ const DraggableListItem = ({ item, index }: DraggableListItemProps) => {
   const { useListGoals } = TwentyFive({ id: STATE_MACHINE_ID });
   const {
     response,
-    mutations: { DeleteGoal, MoveGoal },
+    mutations: { DeleteGoal },
   } = useListGoals();
   
   const handleClick = (goal: string) => {
@@ -36,23 +36,26 @@ const DraggableListItem = ({ item, index }: DraggableListItemProps) => {
   return (
     <Draggable draggableId={item} index={index}>
       {(provided, snapshot) => (
-        <ListItem
-          ref={provided.innerRef}
-          {...provided.draggableProps}
-          {...provided.dragHandleProps}
-          dense secondaryAction={
-            <IconButton edge="end" aria-label="delete" onClick={(e) => handleClick(item)}>
-              <DeleteIcon />
-            </IconButton>
-          }
-        >
-          <ListItemAvatar>
-            <Avatar>
-              <ReorderIcon/>
-            </Avatar>
-          </ListItemAvatar>
-          <ListItemText primary={item} />
-        </ListItem>
+        <div>
+          <ListItem
+            ref={provided.innerRef}
+            {...provided.draggableProps}
+            {...provided.dragHandleProps}
+            dense secondaryAction={
+              <IconButton edge="end" aria-label="delete" onClick={(e) => handleClick(item)}>
+                <DeleteIcon />
+              </IconButton>
+            }
+          >
+            <ListItemAvatar>
+              <Avatar>
+                <ReorderIcon/>
+              </Avatar>
+            </ListItemAvatar>
+            <ListItemText primary={item} />
+          </ListItem>
+          <Divider/>
+        </div>
       )}
     </Draggable>
   );

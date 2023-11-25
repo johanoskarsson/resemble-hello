@@ -23,14 +23,14 @@ export type DraggableListItemProps = {
 };
 
 const DraggableListItem = ({ item, index }: DraggableListItemProps) => {
-  const { useListTasks } = TwentyFive({ id: STATE_MACHINE_ID });
+  const { useListGoals } = TwentyFive({ id: STATE_MACHINE_ID });
   const {
     response,
-    mutations: { DeleteTask, MoveTask },
-  } = useListTasks();
+    mutations: { DeleteGoal, MoveGoal },
+  } = useListGoals();
   
-  const handleClick = (task: string) => {
-    DeleteTask({ task: task });
+  const handleClick = (goal: string) => {
+    DeleteGoal({ goal: goal });
   };
 
   return (

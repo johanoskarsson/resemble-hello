@@ -2,70 +2,69 @@ import asyncio
 from twentyfive.twentyfive_rsm import (
     TwentyFive,
     TwentyFiveState,
-    CreateTaskListRequest,
-    CreateTaskListResponse,
-    ListTasksRequest,
-    ListTasksResponse,
-    AddTaskRequest,
-    AddTaskResponse,
-    MoveTaskRequest,
-    MoveTaskResponse,
-    DeleteTaskRequest,
-    DeleteTaskResponse,
+    CreateGoalListRequest,
+    CreateGoalListResponse,
+    ListGoalsRequest,
+    ListGoalsResponse,
+    AddGoalRequest,
+    AddGoalResponse,
+    MoveGoalRequest,
+    MoveGoalResponse,
+    DeleteGoalRequest,
+    DeleteGoalResponse,
 )
 from resemble.aio.contexts import ReaderContext, WriterContext
 
 
 class TwentyFiveServicer(TwentyFive.Interface):
 
-    async def CreateTaskList(
+    async def CreateGoalList(
         self,
         context: WriterContext,
-        state: TwentyFiveState,
-        request: CreateTaskListRequest,
-    ) -> TwentyFive.CreateTaskListEffects:
-        state = TwentyFiveState()
-        return TwentyFive.CreateTaskListEffects(state=state, response=CreateTaskListResponse())
+        request: CreateGoalListRequest,
+    ) -> TwentyFive.CreateGoalListEffects:
+        state = TwentyFiveState(goals=[])
+        return TwentyFive.CreateGoalListEffects(state=state, response=CreateGoalListResponse())
     
-    async def ListTasks(
+    async def ListGoals(
         self,
         context: ReaderContext,
         state: TwentyFiveState,
-        request: ListTasksRequest,
-    ) -> ListTasksResponse:
-        return ListTasksResponse(tasks=state.tasks)
+        request: ListGoalsRequest,
+    ) -> ListGoalsResponse:
+        return ListGoalsResponse(goals=state.goals)
 
-    async def AddTask(
+    async def AddGoal(
         self,
         context: WriterContext,
         state: TwentyFiveState,
-        request: AddTaskRequest,
-    ) -> TwentyFive.AddTaskEffects:
-        task = request.task
+        request: AddGoalRequest,
+    ) -> TwentyFive.AddGoalEffects:
+        goal = request.goal
         
-        if task not in state.tasks:
-            state.tasks.extend([task])
+        if goal not in state.goals:
+            state.goals.extend([goal])
 
-        return TwentyFive.AddTaskEffects(state=state, response=AddTaskResponse())
+        return TwentyFive.AddGoalEffects(state=state, response=AddGoalResponse())
 
-    async def MoveTask(
+    async def MoveGoal(
         self,
         context: WriterContext,
         state: TwentyFiveState,
-        request: MoveTaskRequest,
-    ) -> TwentyFive.MoveTaskEffects:
-        task = request.task
+        request: MoveGoalRequest,
+    ) -> TwentyFive.MoveGoalEffects:
+        goal = request.goal
         # TODO 
         # TODO how to read the state to verify that this does not already exist?
-        state.tasks.extend([task])
-        return TwentyFive.AddTaskEffects(state=state, response=MoveTaskResponse())
+        state.goals.extend([goal])
+        return TwentyFive.AddGoalEffects(state=state, response=MoveGoalResponse())
 
-    async def DeleteTask(
+    async def DeleteGoal(
         self,
         context: WriterContext,
         state: TwentyFiveState,
-        request: DeleteTaskRequest,
-    ) -> TwentyFive.DeleteTaskEffects:
-        task = request.task
-        state.tasks.remove(task)
-        return TwentyFive.DeleteTaskEffects(state=state, response=DeleteTaskResponse())
+        request: DeleteGoalRequest,
+    ) -> TwentyFive.DeleteGoalEffects:
+        goal = request.goal
+        state.goals.remove(goal)
+        return TwentyFive.DeleteGoalEffects(state=state, response=DeleteGoalResponse())

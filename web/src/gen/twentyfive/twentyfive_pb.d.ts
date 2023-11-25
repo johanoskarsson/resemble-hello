@@ -11,9 +11,9 @@ import { Message, proto3 } from "@bufbuild/protobuf";
  */
 export declare class TwentyFiveState extends Message<TwentyFiveState> {
   /**
-   * @generated from field: repeated string tasks = 1;
+   * @generated from field: repeated string goals = 1;
    */
-  tasks: string[];
+  goals: string[];
 
   constructor(data?: PartialMessage<TwentyFiveState>);
 
@@ -31,217 +31,217 @@ export declare class TwentyFiveState extends Message<TwentyFiveState> {
 }
 
 /**
- * @generated from message twentyfive.CreateTaskListRequest
+ * @generated from message twentyfive.CreateGoalListRequest
  */
-export declare class CreateTaskListRequest extends Message<CreateTaskListRequest> {
-  constructor(data?: PartialMessage<CreateTaskListRequest>);
+export declare class CreateGoalListRequest extends Message<CreateGoalListRequest> {
+  constructor(data?: PartialMessage<CreateGoalListRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "twentyfive.CreateTaskListRequest";
+  static readonly typeName = "twentyfive.CreateGoalListRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateTaskListRequest;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateGoalListRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateTaskListRequest;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateGoalListRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateTaskListRequest;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateGoalListRequest;
 
-  static equals(a: CreateTaskListRequest | PlainMessage<CreateTaskListRequest> | undefined, b: CreateTaskListRequest | PlainMessage<CreateTaskListRequest> | undefined): boolean;
+  static equals(a: CreateGoalListRequest | PlainMessage<CreateGoalListRequest> | undefined, b: CreateGoalListRequest | PlainMessage<CreateGoalListRequest> | undefined): boolean;
 }
 
 /**
- * @generated from message twentyfive.CreateTaskListResponse
+ * @generated from message twentyfive.CreateGoalListResponse
  */
-export declare class CreateTaskListResponse extends Message<CreateTaskListResponse> {
-  constructor(data?: PartialMessage<CreateTaskListResponse>);
+export declare class CreateGoalListResponse extends Message<CreateGoalListResponse> {
+  constructor(data?: PartialMessage<CreateGoalListResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "twentyfive.CreateTaskListResponse";
+  static readonly typeName = "twentyfive.CreateGoalListResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateTaskListResponse;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateGoalListResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateTaskListResponse;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateGoalListResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateTaskListResponse;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateGoalListResponse;
 
-  static equals(a: CreateTaskListResponse | PlainMessage<CreateTaskListResponse> | undefined, b: CreateTaskListResponse | PlainMessage<CreateTaskListResponse> | undefined): boolean;
+  static equals(a: CreateGoalListResponse | PlainMessage<CreateGoalListResponse> | undefined, b: CreateGoalListResponse | PlainMessage<CreateGoalListResponse> | undefined): boolean;
 }
 
 /**
- * @generated from message twentyfive.ListTasksRequest
+ * @generated from message twentyfive.ListGoalsRequest
  */
-export declare class ListTasksRequest extends Message<ListTasksRequest> {
-  constructor(data?: PartialMessage<ListTasksRequest>);
+export declare class ListGoalsRequest extends Message<ListGoalsRequest> {
+  constructor(data?: PartialMessage<ListGoalsRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "twentyfive.ListTasksRequest";
+  static readonly typeName = "twentyfive.ListGoalsRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTasksRequest;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListGoalsRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTasksRequest;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListGoalsRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTasksRequest;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListGoalsRequest;
 
-  static equals(a: ListTasksRequest | PlainMessage<ListTasksRequest> | undefined, b: ListTasksRequest | PlainMessage<ListTasksRequest> | undefined): boolean;
+  static equals(a: ListGoalsRequest | PlainMessage<ListGoalsRequest> | undefined, b: ListGoalsRequest | PlainMessage<ListGoalsRequest> | undefined): boolean;
 }
 
 /**
- * @generated from message twentyfive.ListTasksResponse
+ * @generated from message twentyfive.ListGoalsResponse
  */
-export declare class ListTasksResponse extends Message<ListTasksResponse> {
+export declare class ListGoalsResponse extends Message<ListGoalsResponse> {
   /**
-   * @generated from field: repeated string tasks = 1;
+   * @generated from field: repeated string goals = 1;
    */
-  tasks: string[];
+  goals: string[];
 
-  constructor(data?: PartialMessage<ListTasksResponse>);
+  constructor(data?: PartialMessage<ListGoalsResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "twentyfive.ListTasksResponse";
+  static readonly typeName = "twentyfive.ListGoalsResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTasksResponse;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListGoalsResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTasksResponse;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListGoalsResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTasksResponse;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListGoalsResponse;
 
-  static equals(a: ListTasksResponse | PlainMessage<ListTasksResponse> | undefined, b: ListTasksResponse | PlainMessage<ListTasksResponse> | undefined): boolean;
+  static equals(a: ListGoalsResponse | PlainMessage<ListGoalsResponse> | undefined, b: ListGoalsResponse | PlainMessage<ListGoalsResponse> | undefined): boolean;
 }
 
 /**
- * @generated from message twentyfive.AddTaskRequest
+ * @generated from message twentyfive.AddGoalRequest
  */
-export declare class AddTaskRequest extends Message<AddTaskRequest> {
+export declare class AddGoalRequest extends Message<AddGoalRequest> {
   /**
-   * @generated from field: string task = 1;
+   * @generated from field: string goal = 1;
    */
-  task: string;
+  goal: string;
 
-  constructor(data?: PartialMessage<AddTaskRequest>);
+  constructor(data?: PartialMessage<AddGoalRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "twentyfive.AddTaskRequest";
+  static readonly typeName = "twentyfive.AddGoalRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddTaskRequest;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddGoalRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddTaskRequest;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddGoalRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddTaskRequest;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddGoalRequest;
 
-  static equals(a: AddTaskRequest | PlainMessage<AddTaskRequest> | undefined, b: AddTaskRequest | PlainMessage<AddTaskRequest> | undefined): boolean;
+  static equals(a: AddGoalRequest | PlainMessage<AddGoalRequest> | undefined, b: AddGoalRequest | PlainMessage<AddGoalRequest> | undefined): boolean;
 }
 
 /**
- * @generated from message twentyfive.AddTaskResponse
+ * @generated from message twentyfive.AddGoalResponse
  */
-export declare class AddTaskResponse extends Message<AddTaskResponse> {
-  constructor(data?: PartialMessage<AddTaskResponse>);
+export declare class AddGoalResponse extends Message<AddGoalResponse> {
+  constructor(data?: PartialMessage<AddGoalResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "twentyfive.AddTaskResponse";
+  static readonly typeName = "twentyfive.AddGoalResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddTaskResponse;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddGoalResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddTaskResponse;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddGoalResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddTaskResponse;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddGoalResponse;
 
-  static equals(a: AddTaskResponse | PlainMessage<AddTaskResponse> | undefined, b: AddTaskResponse | PlainMessage<AddTaskResponse> | undefined): boolean;
+  static equals(a: AddGoalResponse | PlainMessage<AddGoalResponse> | undefined, b: AddGoalResponse | PlainMessage<AddGoalResponse> | undefined): boolean;
 }
 
 /**
- * @generated from message twentyfive.MoveTaskRequest
+ * @generated from message twentyfive.MoveGoalRequest
  */
-export declare class MoveTaskRequest extends Message<MoveTaskRequest> {
+export declare class MoveGoalRequest extends Message<MoveGoalRequest> {
   /**
-   * @generated from field: string task = 1;
+   * @generated from field: string goal = 1;
    */
-  task: string;
+  goal: string;
 
   /**
-   * @generated from field: int32 index = 2;
+   * @generated from field: int32 targetIndex = 2;
    */
-  index: number;
+  targetIndex: number;
 
-  constructor(data?: PartialMessage<MoveTaskRequest>);
+  constructor(data?: PartialMessage<MoveGoalRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "twentyfive.MoveTaskRequest";
+  static readonly typeName = "twentyfive.MoveGoalRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MoveTaskRequest;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MoveGoalRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MoveTaskRequest;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MoveGoalRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MoveTaskRequest;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MoveGoalRequest;
 
-  static equals(a: MoveTaskRequest | PlainMessage<MoveTaskRequest> | undefined, b: MoveTaskRequest | PlainMessage<MoveTaskRequest> | undefined): boolean;
+  static equals(a: MoveGoalRequest | PlainMessage<MoveGoalRequest> | undefined, b: MoveGoalRequest | PlainMessage<MoveGoalRequest> | undefined): boolean;
 }
 
 /**
- * @generated from message twentyfive.MoveTaskResponse
+ * @generated from message twentyfive.MoveGoalResponse
  */
-export declare class MoveTaskResponse extends Message<MoveTaskResponse> {
-  constructor(data?: PartialMessage<MoveTaskResponse>);
+export declare class MoveGoalResponse extends Message<MoveGoalResponse> {
+  constructor(data?: PartialMessage<MoveGoalResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "twentyfive.MoveTaskResponse";
+  static readonly typeName = "twentyfive.MoveGoalResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MoveTaskResponse;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MoveGoalResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MoveTaskResponse;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MoveGoalResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MoveTaskResponse;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MoveGoalResponse;
 
-  static equals(a: MoveTaskResponse | PlainMessage<MoveTaskResponse> | undefined, b: MoveTaskResponse | PlainMessage<MoveTaskResponse> | undefined): boolean;
+  static equals(a: MoveGoalResponse | PlainMessage<MoveGoalResponse> | undefined, b: MoveGoalResponse | PlainMessage<MoveGoalResponse> | undefined): boolean;
 }
 
 /**
- * @generated from message twentyfive.DeleteTaskRequest
+ * @generated from message twentyfive.DeleteGoalRequest
  */
-export declare class DeleteTaskRequest extends Message<DeleteTaskRequest> {
+export declare class DeleteGoalRequest extends Message<DeleteGoalRequest> {
   /**
-   * @generated from field: string task = 1;
+   * @generated from field: string goal = 1;
    */
-  task: string;
+  goal: string;
 
-  constructor(data?: PartialMessage<DeleteTaskRequest>);
+  constructor(data?: PartialMessage<DeleteGoalRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "twentyfive.DeleteTaskRequest";
+  static readonly typeName = "twentyfive.DeleteGoalRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteTaskRequest;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteGoalRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteTaskRequest;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteGoalRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteTaskRequest;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteGoalRequest;
 
-  static equals(a: DeleteTaskRequest | PlainMessage<DeleteTaskRequest> | undefined, b: DeleteTaskRequest | PlainMessage<DeleteTaskRequest> | undefined): boolean;
+  static equals(a: DeleteGoalRequest | PlainMessage<DeleteGoalRequest> | undefined, b: DeleteGoalRequest | PlainMessage<DeleteGoalRequest> | undefined): boolean;
 }
 
 /**
- * @generated from message twentyfive.DeleteTaskResponse
+ * @generated from message twentyfive.DeleteGoalResponse
  */
-export declare class DeleteTaskResponse extends Message<DeleteTaskResponse> {
-  constructor(data?: PartialMessage<DeleteTaskResponse>);
+export declare class DeleteGoalResponse extends Message<DeleteGoalResponse> {
+  constructor(data?: PartialMessage<DeleteGoalResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "twentyfive.DeleteTaskResponse";
+  static readonly typeName = "twentyfive.DeleteGoalResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteTaskResponse;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteGoalResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteTaskResponse;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteGoalResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteTaskResponse;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteGoalResponse;
 
-  static equals(a: DeleteTaskResponse | PlainMessage<DeleteTaskResponse> | undefined, b: DeleteTaskResponse | PlainMessage<DeleteTaskResponse> | undefined): boolean;
+  static equals(a: DeleteGoalResponse | PlainMessage<DeleteGoalResponse> | undefined, b: DeleteGoalResponse | PlainMessage<DeleteGoalResponse> | undefined): boolean;
 }
 

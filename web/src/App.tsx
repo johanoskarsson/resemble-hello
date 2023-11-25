@@ -5,17 +5,17 @@ import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 
-import TaskList from "./TaskList";
-import AddTaskForm from "./AddTaskForm";
+import GoalList from "./GoalList";
+import AddGoalForm from "./AddGoalForm";
 
 import Instructions from "./Instructions";
 
 const App = () => {
   return null;
-  // const { useListTasks } = TwentyFive({ id: STATE_MACHINE_ID });
-  // const { response } = useListTasks();
+  // const { useListGoals } = TwentyFive({ id: STATE_MACHINE_ID });
+  // const { response } = useListGoals();
 
-  // let tasksCount = response === undefined ? 0 : response.tasks.length;
+  // let goalsCount = response === undefined ? 0 : response.goals.length;
 
   // return (
   //   <Container>
@@ -24,11 +24,11 @@ const App = () => {
   //         <Typography variant="h1" gutterBottom align="center">TwentyFive</Typography>
   //       </Grid>
   //       <Grid item xs={6}>
-  //         <Instructions tasksCount={tasksCount}/>
+  //         <Instructions goalsCount={goalsCount}/>
   //       </Grid>
   //       <Grid item xs={6}>
-  //       {(tasksCount < 25) ? <AddTaskForm/> : null}
-  //         <TaskList/>
+  //       {(goalsCount < 25) ? <AddGoalForm/> : null}
+  //         <goalList/>
   //       </Grid>
   //     </Grid>
   //   </Container>

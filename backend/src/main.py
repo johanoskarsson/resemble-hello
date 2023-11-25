@@ -7,14 +7,18 @@ from resemble.aio.workflows import Workflow
 
 logging.basicConfig(level=logging.INFO)
 
-STATE_MACHINE_ID = 'twentyfive12'
+STATE_MACHINE_ID = 'twentyfive30'
 
 
 async def initialize(workflow: Workflow):
     twentyfive = TwentyFive(STATE_MACHINE_ID)
 
-    # Is this needed?
-    await twentyfive.AddTask(workflow, task="Eat 10 chickens")
+    logging.info('Initializing: Start')
+
+    await twentyfive.CreateGoalList(workflow)
+    await twentyfive.AddGoal(workflow, goal="Eat 10 chickens")
+
+    logging.info('Initializing: Done')
 
 
 async def main():

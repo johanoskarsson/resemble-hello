@@ -15,15 +15,15 @@ import Divider from '@mui/material/Divider';
 import FormatListNumberedIcon from '@mui/icons-material/FormatListNumbered';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-const TaskList = () => {
-  const { useListTasks } = TwentyFive({ id: STATE_MACHINE_ID });
+const GoalList = () => {
+  const { useListGoals } = TwentyFive({ id: STATE_MACHINE_ID });
   const {
     response,
-    mutations: { DeleteTask, MoveTask },
-  } = useListTasks();
+    mutations: { DeleteGoal, MoveGoal },
+  } = useListGoals();
   
-  const handleClick = (task: string) => {
-    DeleteTask({ task: task });
+  const handleClick = (goal: string) => {
+    DeleteGoal({ goal: goal });
   };
  
   const onDragEnd = ({ destination, source }: DropResult) => {
@@ -40,15 +40,15 @@ const TaskList = () => {
   }
 
   return (
-    <DraggableList items={response.tasks} onDragEnd={onDragEnd}></DraggableList>
+    <DraggableList items={response.goals} onDragEnd={onDragEnd}></DraggableList>
     // <List>
     //   {response !== undefined &&
-    //     response.tasks.length > 0 &&
-    //     response.tasks.map((task: string) => (
+    //     response.goals.length > 0 &&
+    //     response.goals.map((goal: string) => (
     //       <div>
     //       <Divider />
-    //       <ListItem key={task} dense secondaryAction={
-    //         <IconButton edge="end" aria-label="delete" onClick={(e) => handleClick(task)}>
+    //       <ListItem key={goal} dense secondaryAction={
+    //         <IconButton edge="end" aria-label="delete" onClick={(e) => handleClick(goal)}>
     //           <DeleteIcon />
     //         </IconButton>
     //       }
@@ -58,7 +58,7 @@ const TaskList = () => {
     //           <FormatListNumberedIcon />
     //         </Avatar>
     //       </ListItemAvatar>
-    //       <ListItemText primary={task}/>
+    //       <ListItemText primary={goal}/>
     //     </ListItem>
     //     </div>
     //     ))}
@@ -66,4 +66,4 @@ const TaskList = () => {
   );
 }
 
-export default TaskList;
+export default GoalList;

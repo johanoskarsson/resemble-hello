@@ -11,96 +11,96 @@ import { proto3 } from "@bufbuild/protobuf";
 export const TwentyFiveState = proto3.makeMessageType(
   "twentyfive.TwentyFiveState",
   () => [
-    { no: 1, name: "tasks", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 1, name: "goals", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ],
 );
 
 /**
- * @generated from message twentyfive.CreateTaskListRequest
+ * @generated from message twentyfive.CreateGoalListRequest
  */
-export const CreateTaskListRequest = proto3.makeMessageType(
-  "twentyfive.CreateTaskListRequest",
+export const CreateGoalListRequest = proto3.makeMessageType(
+  "twentyfive.CreateGoalListRequest",
   [],
 );
 
 /**
- * @generated from message twentyfive.CreateTaskListResponse
+ * @generated from message twentyfive.CreateGoalListResponse
  */
-export const CreateTaskListResponse = proto3.makeMessageType(
-  "twentyfive.CreateTaskListResponse",
+export const CreateGoalListResponse = proto3.makeMessageType(
+  "twentyfive.CreateGoalListResponse",
   [],
 );
 
 /**
- * @generated from message twentyfive.ListTasksRequest
+ * @generated from message twentyfive.ListGoalsRequest
  */
-export const ListTasksRequest = proto3.makeMessageType(
-  "twentyfive.ListTasksRequest",
+export const ListGoalsRequest = proto3.makeMessageType(
+  "twentyfive.ListGoalsRequest",
   [],
 );
 
 /**
- * @generated from message twentyfive.ListTasksResponse
+ * @generated from message twentyfive.ListGoalsResponse
  */
-export const ListTasksResponse = proto3.makeMessageType(
-  "twentyfive.ListTasksResponse",
+export const ListGoalsResponse = proto3.makeMessageType(
+  "twentyfive.ListGoalsResponse",
   () => [
-    { no: 1, name: "tasks", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 1, name: "goals", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ],
 );
 
 /**
- * @generated from message twentyfive.AddTaskRequest
+ * @generated from message twentyfive.AddGoalRequest
  */
-export const AddTaskRequest = proto3.makeMessageType(
-  "twentyfive.AddTaskRequest",
+export const AddGoalRequest = proto3.makeMessageType(
+  "twentyfive.AddGoalRequest",
   () => [
-    { no: 1, name: "task", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "goal", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
 /**
- * @generated from message twentyfive.AddTaskResponse
+ * @generated from message twentyfive.AddGoalResponse
  */
-export const AddTaskResponse = proto3.makeMessageType(
-  "twentyfive.AddTaskResponse",
+export const AddGoalResponse = proto3.makeMessageType(
+  "twentyfive.AddGoalResponse",
   [],
 );
 
 /**
- * @generated from message twentyfive.MoveTaskRequest
+ * @generated from message twentyfive.MoveGoalRequest
  */
-export const MoveTaskRequest = proto3.makeMessageType(
-  "twentyfive.MoveTaskRequest",
+export const MoveGoalRequest = proto3.makeMessageType(
+  "twentyfive.MoveGoalRequest",
   () => [
-    { no: 1, name: "task", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "index", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 1, name: "goal", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "targetIndex", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ],
 );
 
 /**
- * @generated from message twentyfive.MoveTaskResponse
+ * @generated from message twentyfive.MoveGoalResponse
  */
-export const MoveTaskResponse = proto3.makeMessageType(
-  "twentyfive.MoveTaskResponse",
+export const MoveGoalResponse = proto3.makeMessageType(
+  "twentyfive.MoveGoalResponse",
   [],
 );
 
 /**
- * @generated from message twentyfive.DeleteTaskRequest
+ * @generated from message twentyfive.DeleteGoalRequest
  */
-export const DeleteTaskRequest = proto3.makeMessageType(
-  "twentyfive.DeleteTaskRequest",
+export const DeleteGoalRequest = proto3.makeMessageType(
+  "twentyfive.DeleteGoalRequest",
   () => [
-    { no: 1, name: "task", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "goal", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
 /**
- * @generated from message twentyfive.DeleteTaskResponse
+ * @generated from message twentyfive.DeleteGoalResponse
  */
-export const DeleteTaskResponse = proto3.makeMessageType(
-  "twentyfive.DeleteTaskResponse",
+export const DeleteGoalResponse = proto3.makeMessageType(
+  "twentyfive.DeleteGoalResponse",
   [],
 );
 

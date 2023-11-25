@@ -9,18 +9,18 @@ import { TwentyFive } from "./gen/twentyfive/twentyfive_rsm_react";
 import { STATE_MACHINE_ID } from "./const";
 
 
-const AddTaskForm = () => {
+const AddGoalForm = () => {
   // State of the input component.
-  const [task, setTask] = useState("");
+  const [goal, setGoal] = useState("");
 
-  const { useListTasks } = TwentyFive({ id: STATE_MACHINE_ID });
+  const { useListGoals } = TwentyFive({ id: STATE_MACHINE_ID });
   const {
     response,
-    mutations: { AddTask },
-  } = useListTasks();
+    mutations: { AddGoal },
+  } = useListGoals();
 
   const handleClick = () => {
-    AddTask({ task: task }).then(() => setTask(""));
+    AddGoal({ goal: goal }).then(() => setGoal(""));
   };
 
   return (
@@ -29,9 +29,9 @@ const AddTaskForm = () => {
           <TextField
               required
               id="outlined-required"
-              label="Add task"
-              value={task}
-              onChange={(e) => setTask(e.target.value)}
+              label="Add goal"
+              value={goal}
+              onChange={(e) => setGoal(e.target.value)}
               autoFocus
             />
 
@@ -41,4 +41,4 @@ const AddTaskForm = () => {
   );
 };
 
-export default AddTaskForm;
+export default AddGoalForm;

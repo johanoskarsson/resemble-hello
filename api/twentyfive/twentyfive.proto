@@ -9,57 +9,57 @@ import "resemble/v1alpha1/options.proto";
 service TwentyFive {
   option (resemble.v1alpha1.service).state = "TwentyFiveState";
 
-  rpc CreateTaskList(CreateTaskListRequest) returns (CreateTaskListResponse) {
+  rpc CreateGoalList(CreateGoalListRequest) returns (CreateGoalListResponse) {
     option (resemble.v1alpha1.method).writer = {
       constructor: true,
     };
   }
 
-  rpc ListTasks(ListTasksRequest) returns (ListTasksResponse) {
+  rpc ListGoals(ListGoalsRequest) returns (ListGoalsResponse) {
     option (resemble.v1alpha1.method).reader = {
     };
   }
 
-  rpc AddTask(AddTaskRequest) returns (AddTaskResponse) {
+  rpc AddGoal(AddGoalRequest) returns (AddGoalResponse) {
     option (resemble.v1alpha1.method).writer = {
     };
   }
 
-  rpc MoveTask(MoveTaskRequest) returns (MoveTaskResponse) {
+  rpc MoveGoal(MoveGoalRequest) returns (MoveGoalResponse) {
     option (resemble.v1alpha1.method).writer = {
     };
   }
 
-  rpc DeleteTask(DeleteTaskRequest) returns (DeleteTaskResponse) {
+  rpc DeleteGoal(DeleteGoalRequest) returns (DeleteGoalResponse) {
     option (resemble.v1alpha1.method).writer = {
     };
   }
 }
 
 message TwentyFiveState {
-  repeated string tasks = 1;
+  repeated string goals = 1;
 }
 
-message CreateTaskListRequest {}
-message CreateTaskListResponse {}
+message CreateGoalListRequest {}
+message CreateGoalListResponse {}
 
-message ListTasksRequest {}
-message ListTasksResponse {
-  repeated string tasks = 1;
+message ListGoalsRequest {}
+message ListGoalsResponse {
+  repeated string goals = 1;
 }
 
-message AddTaskRequest {
-  string task = 1;
+message AddGoalRequest {
+  string goal = 1;
 }
-message AddTaskResponse {}
+message AddGoalResponse {}
 
-message MoveTaskRequest {
-  string task = 1;
+message MoveGoalRequest {
+  string goal = 1;
   int32 targetIndex = 2;
 }
-message MoveTaskResponse {}
+message MoveGoalResponse {}
 
-message DeleteTaskRequest {
-  string task = 1;
+message DeleteGoalRequest {
+  string goal = 1;
 }
-message DeleteTaskResponse {}
+message DeleteGoalResponse {}

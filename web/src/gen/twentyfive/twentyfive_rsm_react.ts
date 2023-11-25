@@ -27,31 +27,31 @@ import {
 import { v4 as uuidv4 } from "uuid";
 import {
   TwentyFiveState, 
-	CreateTaskListRequest, 
-	CreateTaskListResponse, 
-	ListTasksRequest, 
-	ListTasksResponse, 
-	AddTaskRequest, 
-	AddTaskResponse, 
-	MoveTaskRequest, 
-	MoveTaskResponse, 
-	DeleteTaskRequest, 
-	DeleteTaskResponse,
+	CreateGoalListRequest, 
+	CreateGoalListResponse, 
+	ListGoalsRequest, 
+	ListGoalsResponse, 
+	AddGoalRequest, 
+	AddGoalResponse, 
+	MoveGoalRequest, 
+	MoveGoalResponse, 
+	DeleteGoalRequest, 
+	DeleteGoalResponse,
 } from "./twentyfive_pb";
 
 // Additionally re-export all messages from the pb module.
 export {
   TwentyFiveState, 
-	CreateTaskListRequest, 
-	CreateTaskListResponse, 
-	ListTasksRequest, 
-	ListTasksResponse, 
-	AddTaskRequest, 
-	AddTaskResponse, 
-	MoveTaskRequest, 
-	MoveTaskResponse, 
-	DeleteTaskRequest, 
-	DeleteTaskResponse,
+	CreateGoalListRequest, 
+	CreateGoalListResponse, 
+	ListGoalsRequest, 
+	ListGoalsResponse, 
+	AddGoalRequest, 
+	AddGoalResponse, 
+	MoveGoalRequest, 
+	MoveGoalResponse, 
+	DeleteGoalRequest, 
+	DeleteGoalResponse,
 };
 
 // Check if safari. Print warning, if yes.
@@ -182,103 +182,103 @@ async function guardedFetch(request: Request, options: any = {}) {
 ///////////////////////////////////////////////////////////////////////////
 
 export interface TwentyFiveApi {
-  CreateTaskList: (partialRequest?: __bufbuildProtobufPartialMessage<CreateTaskListRequest>) =>
-  Promise<CreateTaskListResponse>;
-  ListTasks: (partialRequest?: __bufbuildProtobufPartialMessage<ListTasksRequest>) =>
-  Promise<ListTasksResponse>;
-  AddTask: (partialRequest?: __bufbuildProtobufPartialMessage<AddTaskRequest>) =>
-  Promise<AddTaskResponse>;
-  MoveTask: (partialRequest?: __bufbuildProtobufPartialMessage<MoveTaskRequest>) =>
-  Promise<MoveTaskResponse>;
-  DeleteTask: (partialRequest?: __bufbuildProtobufPartialMessage<DeleteTaskRequest>) =>
-  Promise<DeleteTaskResponse>;
-  useListTasks: (partialRequest?: __bufbuildProtobufPartialMessage<ListTasksRequest>) => {
-   response: ListTasksResponse | undefined;
+  CreateGoalList: (partialRequest?: __bufbuildProtobufPartialMessage<CreateGoalListRequest>) =>
+  Promise<CreateGoalListResponse>;
+  ListGoals: (partialRequest?: __bufbuildProtobufPartialMessage<ListGoalsRequest>) =>
+  Promise<ListGoalsResponse>;
+  AddGoal: (partialRequest?: __bufbuildProtobufPartialMessage<AddGoalRequest>) =>
+  Promise<AddGoalResponse>;
+  MoveGoal: (partialRequest?: __bufbuildProtobufPartialMessage<MoveGoalRequest>) =>
+  Promise<MoveGoalResponse>;
+  DeleteGoal: (partialRequest?: __bufbuildProtobufPartialMessage<DeleteGoalRequest>) =>
+  Promise<DeleteGoalResponse>;
+  useListGoals: (partialRequest?: __bufbuildProtobufPartialMessage<ListGoalsRequest>) => {
+   response: ListGoalsResponse | undefined;
     isLoading: boolean;
     error: unknown;
     mutations: {
-       CreateTaskList: (request: __bufbuildProtobufPartialMessage<CreateTaskListRequest>,
+       CreateGoalList: (request: __bufbuildProtobufPartialMessage<CreateGoalListRequest>,
        optimistic_metadata?: any ) =>
-      Promise<__resembleResponseOrError<CreateTaskListResponse>>;
-       AddTask: (request: __bufbuildProtobufPartialMessage<AddTaskRequest>,
+      Promise<__resembleResponseOrError<CreateGoalListResponse>>;
+       AddGoal: (request: __bufbuildProtobufPartialMessage<AddGoalRequest>,
        optimistic_metadata?: any ) =>
-      Promise<__resembleResponseOrError<AddTaskResponse>>;
-       MoveTask: (request: __bufbuildProtobufPartialMessage<MoveTaskRequest>,
+      Promise<__resembleResponseOrError<AddGoalResponse>>;
+       MoveGoal: (request: __bufbuildProtobufPartialMessage<MoveGoalRequest>,
        optimistic_metadata?: any ) =>
-      Promise<__resembleResponseOrError<MoveTaskResponse>>;
-       DeleteTask: (request: __bufbuildProtobufPartialMessage<DeleteTaskRequest>,
+      Promise<__resembleResponseOrError<MoveGoalResponse>>;
+       DeleteGoal: (request: __bufbuildProtobufPartialMessage<DeleteGoalRequest>,
        optimistic_metadata?: any ) =>
-      Promise<__resembleResponseOrError<DeleteTaskResponse>>;
+      Promise<__resembleResponseOrError<DeleteGoalResponse>>;
     };
-      pendingCreateTaskListMutations: {
-        request: CreateTaskListRequest;
+      pendingCreateGoalListMutations: {
+        request: CreateGoalListRequest;
         idempotencyKey: string;
         isLoading: boolean;
         error?: unknown;
         optimistic_metadata?: any;
       }[];
-      failedCreateTaskListMutations: {
-        request: CreateTaskListRequest;
+      failedCreateGoalListMutations: {
+        request: CreateGoalListRequest;
         idempotencyKey: string;
         isLoading: boolean;
         error?: unknown;
       }[];
-      recoveredCreateTaskListMutations: {
-        request: CreateTaskListRequest;
+      recoveredCreateGoalListMutations: {
+        request: CreateGoalListRequest;
         idempotencyKey: string;
         run: () => void;
       }[];
-      pendingAddTaskMutations: {
-        request: AddTaskRequest;
+      pendingAddGoalMutations: {
+        request: AddGoalRequest;
         idempotencyKey: string;
         isLoading: boolean;
         error?: unknown;
         optimistic_metadata?: any;
       }[];
-      failedAddTaskMutations: {
-        request: AddTaskRequest;
+      failedAddGoalMutations: {
+        request: AddGoalRequest;
         idempotencyKey: string;
         isLoading: boolean;
         error?: unknown;
       }[];
-      recoveredAddTaskMutations: {
-        request: AddTaskRequest;
+      recoveredAddGoalMutations: {
+        request: AddGoalRequest;
         idempotencyKey: string;
         run: () => void;
       }[];
-      pendingMoveTaskMutations: {
-        request: MoveTaskRequest;
+      pendingMoveGoalMutations: {
+        request: MoveGoalRequest;
         idempotencyKey: string;
         isLoading: boolean;
         error?: unknown;
         optimistic_metadata?: any;
       }[];
-      failedMoveTaskMutations: {
-        request: MoveTaskRequest;
+      failedMoveGoalMutations: {
+        request: MoveGoalRequest;
         idempotencyKey: string;
         isLoading: boolean;
         error?: unknown;
       }[];
-      recoveredMoveTaskMutations: {
-        request: MoveTaskRequest;
+      recoveredMoveGoalMutations: {
+        request: MoveGoalRequest;
         idempotencyKey: string;
         run: () => void;
       }[];
-      pendingDeleteTaskMutations: {
-        request: DeleteTaskRequest;
+      pendingDeleteGoalMutations: {
+        request: DeleteGoalRequest;
         idempotencyKey: string;
         isLoading: boolean;
         error?: unknown;
         optimistic_metadata?: any;
       }[];
-      failedDeleteTaskMutations: {
-        request: DeleteTaskRequest;
+      failedDeleteGoalMutations: {
+        request: DeleteGoalRequest;
         idempotencyKey: string;
         isLoading: boolean;
         error?: unknown;
       }[];
-      recoveredDeleteTaskMutations: {
-        request: DeleteTaskRequest;
+      recoveredDeleteGoalMutations: {
+        request: DeleteGoalRequest;
         idempotencyKey: string;
         run: () => void;
       }[];
@@ -318,48 +318,48 @@ export const TwentyFive = ({ id, storeMutationsLocallyInNamespace}: SettingsPara
     });
   };
 
-  const CreateTaskList = async (partialRequest: __bufbuildProtobufPartialMessage<CreateTaskListRequest> = {}) => {
-    const request = partialRequest instanceof CreateTaskListRequest ? partialRequest : new CreateTaskListRequest(partialRequest);
+  const CreateGoalList = async (partialRequest: __bufbuildProtobufPartialMessage<CreateGoalListRequest> = {}) => {
+    const request = partialRequest instanceof CreateGoalListRequest ? partialRequest : new CreateGoalListRequest(partialRequest);
     const requestBody = request.toJson();
     // Invariant here is that we use the '/package.service.method' path and
     // HTTP 'POST' method (we need 'POST' because we send an HTTP body).
     //
     // See also 'resemble/helpers.py'.
     const response = await guardedFetch(
-      newRequest(requestBody, "/twentyfive.TwentyFive.CreateTaskList", "POST"));
+      newRequest(requestBody, "/twentyfive.TwentyFive.CreateGoalList", "POST"));
 
     return await response.json();
   };
 
-  const ListTasks = async (partialRequest: __bufbuildProtobufPartialMessage<ListTasksRequest> = {}) => {
-    const request = partialRequest instanceof ListTasksRequest ? partialRequest : new ListTasksRequest(partialRequest);
+  const ListGoals = async (partialRequest: __bufbuildProtobufPartialMessage<ListGoalsRequest> = {}) => {
+    const request = partialRequest instanceof ListGoalsRequest ? partialRequest : new ListGoalsRequest(partialRequest);
     const requestBody = request.toJson();
     // Invariant here is that we use the '/package.service.method' path and
     // HTTP 'POST' method (we need 'POST' because we send an HTTP body).
     //
     // See also 'resemble/helpers.py'.
     const response = await guardedFetch(
-      newRequest(requestBody, "/twentyfive.TwentyFive.ListTasks", "POST"));
+      newRequest(requestBody, "/twentyfive.TwentyFive.ListGoals", "POST"));
 
     if (!response.ok && response.headers.has("grpc-status")) {
       const grpcStatus = response.headers.get("grpc-status");
       let grpcMessage = response.headers.get("grpc-message");
       throw new Error(
-        `'twentyfive.TwentyFive.ListTasks' for '${id}' responded ` +
+        `'twentyfive.TwentyFive.ListGoals' for '${id}' responded ` +
           `with status ${grpcStatus}` +
           `${grpcMessage !== null ? ": " + grpcMessage : ""}`
       );
     } else if (!response.ok) {
       throw new Error(
-        `'twentyfive.TwentyFive.ListTasks' failed: ${response.body}`
+        `'twentyfive.TwentyFive.ListGoals' failed: ${response.body}`
       );
     }
 
     return await response.json();
   };
 
-  const useListTasks = (partialRequest: __bufbuildProtobufPartialMessage<ListTasksRequest> = {}) => {
-    const [response, setResponse] = useState<ListTasksResponse>();
+  const useListGoals = (partialRequest: __bufbuildProtobufPartialMessage<ListGoalsRequest> = {}) => {
+    const [response, setResponse] = useState<ListGoalsResponse>();
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [error, setError] = useState<unknown>();
 
@@ -385,9 +385,9 @@ export const TwentyFive = ({ id, storeMutationsLocallyInNamespace}: SettingsPara
       };
     }, [abortController]);
 
-    const request = partialRequest instanceof ListTasksRequest
+    const request = partialRequest instanceof ListGoalsRequest
         ? partialRequest
-        : new ListTasksRequest(partialRequest);
+        : new ListGoalsRequest(partialRequest);
 
     // NOTE: using a ref for the 'request' and 'settings' (below) so
     // that it doesn't get changed after the first time calling 'usePing'.
@@ -416,99 +416,99 @@ export const TwentyFive = ({ id, storeMutationsLocallyInNamespace}: SettingsPara
 
 function hasRunningMutations(): boolean {
       if (
-      runningCreateTaskListMutations.current.length > 0||
-      runningAddTaskMutations.current.length > 0||
-      runningMoveTaskMutations.current.length > 0||
-      runningDeleteTaskMutations.current.length > 0) {
+      runningCreateGoalListMutations.current.length > 0||
+      runningAddGoalMutations.current.length > 0||
+      runningMoveGoalMutations.current.length > 0||
+      runningDeleteGoalMutations.current.length > 0) {
         return true;
       }
       return false;
     }
 
 
-    const runningCreateTaskListMutations = useRef<__resembleMutation<CreateTaskListRequest>[]>([]);
-    const recoveredCreateTaskListMutations = useRef<
-      [__resembleMutation<CreateTaskListRequest>, () => void][]
+    const runningCreateGoalListMutations = useRef<__resembleMutation<CreateGoalListRequest>[]>([]);
+    const recoveredCreateGoalListMutations = useRef<
+      [__resembleMutation<CreateGoalListRequest>, () => void][]
     >([]);
-    const shouldClearFailedCreateTaskListMutations = useRef(false);
-    const [failedCreateTaskListMutations, setFailedCreateTaskListMutations] = useState<
-      __resembleMutation<CreateTaskListRequest>[]
+    const shouldClearFailedCreateGoalListMutations = useRef(false);
+    const [failedCreateGoalListMutations, setFailedCreateGoalListMutations] = useState<
+      __resembleMutation<CreateGoalListRequest>[]
     >([]);
-    const queuedCreateTaskListMutations = useRef<[__resembleMutation<CreateTaskListRequest>, () => void][]>(
+    const queuedCreateGoalListMutations = useRef<[__resembleMutation<CreateGoalListRequest>, () => void][]>(
       []
     );
-    const recoverAndPurgeCreateTaskListMutations = (): [
-      __resembleMutation<CreateTaskListRequest>,
+    const recoverAndPurgeCreateGoalListMutations = (): [
+      __resembleMutation<CreateGoalListRequest>,
       () => void
     ][] => {
       if (localStorageKeyRef.current === undefined) {
         return [];
       }
-      const suffix = CreateTaskList
+      const suffix = CreateGoalList
       const value = localStorage.getItem(localStorageKeyRef.current + suffix);
       if (value === null) {
         return [];
       }
 
       localStorage.removeItem(localStorageKeyRef.current);
-      const mutations: __resembleMutation<CreateTaskListRequest>[] = JSON.parse(value);
-      const recoveredCreateTaskListMutations: [
-        __resembleMutation<CreateTaskListRequest>,
+      const mutations: __resembleMutation<CreateGoalListRequest>[] = JSON.parse(value);
+      const recoveredCreateGoalListMutations: [
+        __resembleMutation<CreateGoalListRequest>,
         () => void
       ][] = [];
       for (const mutation of mutations) {
-        recoveredCreateTaskListMutations.push([mutation, () => __CreateTaskList(mutation)]);
+        recoveredCreateGoalListMutations.push([mutation, () => __CreateGoalList(mutation)]);
       }
-      return recoveredCreateTaskListMutations;
+      return recoveredCreateGoalListMutations;
     }
-    const doOnceCreateTaskList = useRef(true)
-    if (doOnceCreateTaskList.current) {
-      doOnceCreateTaskList.current = false
-      recoveredCreateTaskListMutations.current = recoverAndPurgeCreateTaskListMutations()
+    const doOnceCreateGoalList = useRef(true)
+    if (doOnceCreateGoalList.current) {
+      doOnceCreateGoalList.current = false
+      recoveredCreateGoalListMutations.current = recoverAndPurgeCreateGoalListMutations()
     }
 
     // User facing state that only includes the pending mutations that
     // have not been observed.
-    const [unobservedPendingCreateTaskListMutations, setUnobservedPendingCreateTaskListMutations] =
-      useState<__resembleMutation<CreateTaskListRequest>[]>([]);
+    const [unobservedPendingCreateGoalListMutations, setUnobservedPendingCreateGoalListMutations] =
+      useState<__resembleMutation<CreateGoalListRequest>[]>([]);
 
     useEffect(() => {
-      shouldClearFailedCreateTaskListMutations.current = true;
-    }, [failedCreateTaskListMutations]);
+      shouldClearFailedCreateGoalListMutations.current = true;
+    }, [failedCreateGoalListMutations]);
 
-    async function __CreateTaskList(
-      mutation: __resembleMutation<CreateTaskListRequest>
-    ): Promise<__resembleResponseOrError<CreateTaskListResponse>> {
+    async function __CreateGoalList(
+      mutation: __resembleMutation<CreateGoalListRequest>
+    ): Promise<__resembleResponseOrError<CreateGoalListResponse>> {
       try {
         // Invariant that we won't yield to event loop before pushing to
-        // runningCreateTaskListMutations
-        runningCreateTaskListMutations.current.push(mutation)
-        return _Mutation<CreateTaskListRequest, CreateTaskListResponse>(
+        // runningCreateGoalListMutations
+        runningCreateGoalListMutations.current.push(mutation)
+        return _Mutation<CreateGoalListRequest, CreateGoalListResponse>(
           // Invariant here is that we use the '/package.service.method'.
           //
           // See also 'resemble/helpers.py'.
-          "/twentyfive.TwentyFive.CreateTaskList",
+          "/twentyfive.TwentyFive.CreateGoalList",
           mutation,
           mutation.request,
           mutation.idempotencyKey,
-          setUnobservedPendingCreateTaskListMutations,
+          setUnobservedPendingCreateGoalListMutations,
           abortController,
-          shouldClearFailedCreateTaskListMutations,
-          setFailedCreateTaskListMutations,
-          runningCreateTaskListMutations,
+          shouldClearFailedCreateGoalListMutations,
+          setFailedCreateGoalListMutations,
+          runningCreateGoalListMutations,
           flushMutations,
           queuedMutations,
-          CreateTaskListRequest,
-          CreateTaskListResponse.fromJson
+          CreateGoalListRequest,
+          CreateGoalListResponse.fromJson
         );
       } finally {
-        runningCreateTaskListMutations.current = runningCreateTaskListMutations.current.filter(
+        runningCreateGoalListMutations.current = runningCreateGoalListMutations.current.filter(
           ({ idempotencyKey }) => mutation.idempotencyKey !== idempotencyKey
         );
 
         __resemblePopMutationMaybeFromLocalStorage(
           localStorageKeyRef.current,
-          "CreateTaskList",
+          "CreateGoalList",
           (mutationRequest: __resembleMutation<Request>) =>
             mutationRequest.idempotencyKey !== mutation.idempotencyKey
         );
@@ -516,8 +516,8 @@ function hasRunningMutations(): boolean {
 
       }
     }
-    async function _CreateTaskList(mutation: __resembleMutation<CreateTaskListRequest>) {
-      setUnobservedPendingCreateTaskListMutations(
+    async function _CreateGoalList(mutation: __resembleMutation<CreateGoalListRequest>) {
+      setUnobservedPendingCreateGoalListMutations(
         (mutations) => [...mutations, mutation]
       )
 
@@ -530,35 +530,35 @@ function hasRunningMutations(): boolean {
         queuedMutations.current.length > 0 ||
         flushMutations.current !== undefined
       ) {
-        const deferred = new __resembleReactDeferred<__resembleResponseOrError<CreateTaskListResponse>>(() =>
-          __CreateTaskList(mutation)
+        const deferred = new __resembleReactDeferred<__resembleResponseOrError<CreateGoalListResponse>>(() =>
+          __CreateGoalList(mutation)
         );
 
         // Add to localStorage here.
-        queuedCreateTaskListMutations.current.push([mutation, () => deferred.start()]);
+        queuedCreateGoalListMutations.current.push([mutation, () => deferred.start()]);
         queuedMutations.current.push(() => {
-          for (const [, run] of queuedCreateTaskListMutations.current) {
-            queuedCreateTaskListMutations.current.shift();
+          for (const [, run] of queuedCreateGoalListMutations.current) {
+            queuedCreateGoalListMutations.current.shift();
             run();
             break;
           }
         });
         // Maybe add to localStorage.
-        __resemblePushMutationMaybeToLocalStorage(localStorageKeyRef.current, "CreateTaskList", mutation);
+        __resemblePushMutationMaybeToLocalStorage(localStorageKeyRef.current, "CreateGoalList", mutation);
 
         return deferred.promise;
       } else {
-        // NOTE: we'll add this mutation to `runningCreateTaskListMutations` in `__CreateTaskList`
+        // NOTE: we'll add this mutation to `runningCreateGoalListMutations` in `__CreateGoalList`
         // without yielding to event loop so that we are guaranteed atomicity with checking `hasRunningMutations()`.
-        return await __CreateTaskList(mutation);
+        return await __CreateGoalList(mutation);
       }
     }
 
-    async function CreateTaskList(
-      partialRequest: __bufbuildProtobufPartialMessage<CreateTaskListRequest>, optimistic_metadata?: any
-    ): Promise<__resembleResponseOrError<CreateTaskListResponse>> {
+    async function CreateGoalList(
+      partialRequest: __bufbuildProtobufPartialMessage<CreateGoalListRequest>, optimistic_metadata?: any
+    ): Promise<__resembleResponseOrError<CreateGoalListResponse>> {
       const idempotencyKey = uuidv4();
-      const request = partialRequest instanceof CreateTaskListRequest ? partialRequest : new CreateTaskListRequest(partialRequest);
+      const request = partialRequest instanceof CreateGoalListRequest ? partialRequest : new CreateGoalListRequest(partialRequest);
 
       const mutation = {
         request,
@@ -567,92 +567,92 @@ function hasRunningMutations(): boolean {
         isLoading: false, // Won't start loading if we're flushing mutations.
       };
 
-      return _CreateTaskList(mutation);
+      return _CreateGoalList(mutation);
     }
 
-    const runningAddTaskMutations = useRef<__resembleMutation<AddTaskRequest>[]>([]);
-    const recoveredAddTaskMutations = useRef<
-      [__resembleMutation<AddTaskRequest>, () => void][]
+    const runningAddGoalMutations = useRef<__resembleMutation<AddGoalRequest>[]>([]);
+    const recoveredAddGoalMutations = useRef<
+      [__resembleMutation<AddGoalRequest>, () => void][]
     >([]);
-    const shouldClearFailedAddTaskMutations = useRef(false);
-    const [failedAddTaskMutations, setFailedAddTaskMutations] = useState<
-      __resembleMutation<AddTaskRequest>[]
+    const shouldClearFailedAddGoalMutations = useRef(false);
+    const [failedAddGoalMutations, setFailedAddGoalMutations] = useState<
+      __resembleMutation<AddGoalRequest>[]
     >([]);
-    const queuedAddTaskMutations = useRef<[__resembleMutation<AddTaskRequest>, () => void][]>(
+    const queuedAddGoalMutations = useRef<[__resembleMutation<AddGoalRequest>, () => void][]>(
       []
     );
-    const recoverAndPurgeAddTaskMutations = (): [
-      __resembleMutation<AddTaskRequest>,
+    const recoverAndPurgeAddGoalMutations = (): [
+      __resembleMutation<AddGoalRequest>,
       () => void
     ][] => {
       if (localStorageKeyRef.current === undefined) {
         return [];
       }
-      const suffix = AddTask
+      const suffix = AddGoal
       const value = localStorage.getItem(localStorageKeyRef.current + suffix);
       if (value === null) {
         return [];
       }
 
       localStorage.removeItem(localStorageKeyRef.current);
-      const mutations: __resembleMutation<AddTaskRequest>[] = JSON.parse(value);
-      const recoveredAddTaskMutations: [
-        __resembleMutation<AddTaskRequest>,
+      const mutations: __resembleMutation<AddGoalRequest>[] = JSON.parse(value);
+      const recoveredAddGoalMutations: [
+        __resembleMutation<AddGoalRequest>,
         () => void
       ][] = [];
       for (const mutation of mutations) {
-        recoveredAddTaskMutations.push([mutation, () => __AddTask(mutation)]);
+        recoveredAddGoalMutations.push([mutation, () => __AddGoal(mutation)]);
       }
-      return recoveredAddTaskMutations;
+      return recoveredAddGoalMutations;
     }
-    const doOnceAddTask = useRef(true)
-    if (doOnceAddTask.current) {
-      doOnceAddTask.current = false
-      recoveredAddTaskMutations.current = recoverAndPurgeAddTaskMutations()
+    const doOnceAddGoal = useRef(true)
+    if (doOnceAddGoal.current) {
+      doOnceAddGoal.current = false
+      recoveredAddGoalMutations.current = recoverAndPurgeAddGoalMutations()
     }
 
     // User facing state that only includes the pending mutations that
     // have not been observed.
-    const [unobservedPendingAddTaskMutations, setUnobservedPendingAddTaskMutations] =
-      useState<__resembleMutation<AddTaskRequest>[]>([]);
+    const [unobservedPendingAddGoalMutations, setUnobservedPendingAddGoalMutations] =
+      useState<__resembleMutation<AddGoalRequest>[]>([]);
 
     useEffect(() => {
-      shouldClearFailedAddTaskMutations.current = true;
-    }, [failedAddTaskMutations]);
+      shouldClearFailedAddGoalMutations.current = true;
+    }, [failedAddGoalMutations]);
 
-    async function __AddTask(
-      mutation: __resembleMutation<AddTaskRequest>
-    ): Promise<__resembleResponseOrError<AddTaskResponse>> {
+    async function __AddGoal(
+      mutation: __resembleMutation<AddGoalRequest>
+    ): Promise<__resembleResponseOrError<AddGoalResponse>> {
       try {
         // Invariant that we won't yield to event loop before pushing to
-        // runningAddTaskMutations
-        runningAddTaskMutations.current.push(mutation)
-        return _Mutation<AddTaskRequest, AddTaskResponse>(
+        // runningAddGoalMutations
+        runningAddGoalMutations.current.push(mutation)
+        return _Mutation<AddGoalRequest, AddGoalResponse>(
           // Invariant here is that we use the '/package.service.method'.
           //
           // See also 'resemble/helpers.py'.
-          "/twentyfive.TwentyFive.AddTask",
+          "/twentyfive.TwentyFive.AddGoal",
           mutation,
           mutation.request,
           mutation.idempotencyKey,
-          setUnobservedPendingAddTaskMutations,
+          setUnobservedPendingAddGoalMutations,
           abortController,
-          shouldClearFailedAddTaskMutations,
-          setFailedAddTaskMutations,
-          runningAddTaskMutations,
+          shouldClearFailedAddGoalMutations,
+          setFailedAddGoalMutations,
+          runningAddGoalMutations,
           flushMutations,
           queuedMutations,
-          AddTaskRequest,
-          AddTaskResponse.fromJson
+          AddGoalRequest,
+          AddGoalResponse.fromJson
         );
       } finally {
-        runningAddTaskMutations.current = runningAddTaskMutations.current.filter(
+        runningAddGoalMutations.current = runningAddGoalMutations.current.filter(
           ({ idempotencyKey }) => mutation.idempotencyKey !== idempotencyKey
         );
 
         __resemblePopMutationMaybeFromLocalStorage(
           localStorageKeyRef.current,
-          "AddTask",
+          "AddGoal",
           (mutationRequest: __resembleMutation<Request>) =>
             mutationRequest.idempotencyKey !== mutation.idempotencyKey
         );
@@ -660,8 +660,8 @@ function hasRunningMutations(): boolean {
 
       }
     }
-    async function _AddTask(mutation: __resembleMutation<AddTaskRequest>) {
-      setUnobservedPendingAddTaskMutations(
+    async function _AddGoal(mutation: __resembleMutation<AddGoalRequest>) {
+      setUnobservedPendingAddGoalMutations(
         (mutations) => [...mutations, mutation]
       )
 
@@ -674,35 +674,35 @@ function hasRunningMutations(): boolean {
         queuedMutations.current.length > 0 ||
         flushMutations.current !== undefined
       ) {
-        const deferred = new __resembleReactDeferred<__resembleResponseOrError<AddTaskResponse>>(() =>
-          __AddTask(mutation)
+        const deferred = new __resembleReactDeferred<__resembleResponseOrError<AddGoalResponse>>(() =>
+          __AddGoal(mutation)
         );
 
         // Add to localStorage here.
-        queuedAddTaskMutations.current.push([mutation, () => deferred.start()]);
+        queuedAddGoalMutations.current.push([mutation, () => deferred.start()]);
         queuedMutations.current.push(() => {
-          for (const [, run] of queuedAddTaskMutations.current) {
-            queuedAddTaskMutations.current.shift();
+          for (const [, run] of queuedAddGoalMutations.current) {
+            queuedAddGoalMutations.current.shift();
             run();
             break;
           }
         });
         // Maybe add to localStorage.
-        __resemblePushMutationMaybeToLocalStorage(localStorageKeyRef.current, "AddTask", mutation);
+        __resemblePushMutationMaybeToLocalStorage(localStorageKeyRef.current, "AddGoal", mutation);
 
         return deferred.promise;
       } else {
-        // NOTE: we'll add this mutation to `runningAddTaskMutations` in `__AddTask`
+        // NOTE: we'll add this mutation to `runningAddGoalMutations` in `__AddGoal`
         // without yielding to event loop so that we are guaranteed atomicity with checking `hasRunningMutations()`.
-        return await __AddTask(mutation);
+        return await __AddGoal(mutation);
       }
     }
 
-    async function AddTask(
-      partialRequest: __bufbuildProtobufPartialMessage<AddTaskRequest>, optimistic_metadata?: any
-    ): Promise<__resembleResponseOrError<AddTaskResponse>> {
+    async function AddGoal(
+      partialRequest: __bufbuildProtobufPartialMessage<AddGoalRequest>, optimistic_metadata?: any
+    ): Promise<__resembleResponseOrError<AddGoalResponse>> {
       const idempotencyKey = uuidv4();
-      const request = partialRequest instanceof AddTaskRequest ? partialRequest : new AddTaskRequest(partialRequest);
+      const request = partialRequest instanceof AddGoalRequest ? partialRequest : new AddGoalRequest(partialRequest);
 
       const mutation = {
         request,
@@ -711,92 +711,92 @@ function hasRunningMutations(): boolean {
         isLoading: false, // Won't start loading if we're flushing mutations.
       };
 
-      return _AddTask(mutation);
+      return _AddGoal(mutation);
     }
 
-    const runningMoveTaskMutations = useRef<__resembleMutation<MoveTaskRequest>[]>([]);
-    const recoveredMoveTaskMutations = useRef<
-      [__resembleMutation<MoveTaskRequest>, () => void][]
+    const runningMoveGoalMutations = useRef<__resembleMutation<MoveGoalRequest>[]>([]);
+    const recoveredMoveGoalMutations = useRef<
+      [__resembleMutation<MoveGoalRequest>, () => void][]
     >([]);
-    const shouldClearFailedMoveTaskMutations = useRef(false);
-    const [failedMoveTaskMutations, setFailedMoveTaskMutations] = useState<
-      __resembleMutation<MoveTaskRequest>[]
+    const shouldClearFailedMoveGoalMutations = useRef(false);
+    const [failedMoveGoalMutations, setFailedMoveGoalMutations] = useState<
+      __resembleMutation<MoveGoalRequest>[]
     >([]);
-    const queuedMoveTaskMutations = useRef<[__resembleMutation<MoveTaskRequest>, () => void][]>(
+    const queuedMoveGoalMutations = useRef<[__resembleMutation<MoveGoalRequest>, () => void][]>(
       []
     );
-    const recoverAndPurgeMoveTaskMutations = (): [
-      __resembleMutation<MoveTaskRequest>,
+    const recoverAndPurgeMoveGoalMutations = (): [
+      __resembleMutation<MoveGoalRequest>,
       () => void
     ][] => {
       if (localStorageKeyRef.current === undefined) {
         return [];
       }
-      const suffix = MoveTask
+      const suffix = MoveGoal
       const value = localStorage.getItem(localStorageKeyRef.current + suffix);
       if (value === null) {
         return [];
       }
 
       localStorage.removeItem(localStorageKeyRef.current);
-      const mutations: __resembleMutation<MoveTaskRequest>[] = JSON.parse(value);
-      const recoveredMoveTaskMutations: [
-        __resembleMutation<MoveTaskRequest>,
+      const mutations: __resembleMutation<MoveGoalRequest>[] = JSON.parse(value);
+      const recoveredMoveGoalMutations: [
+        __resembleMutation<MoveGoalRequest>,
         () => void
       ][] = [];
       for (const mutation of mutations) {
-        recoveredMoveTaskMutations.push([mutation, () => __MoveTask(mutation)]);
+        recoveredMoveGoalMutations.push([mutation, () => __MoveGoal(mutation)]);
       }
-      return recoveredMoveTaskMutations;
+      return recoveredMoveGoalMutations;
     }
-    const doOnceMoveTask = useRef(true)
-    if (doOnceMoveTask.current) {
-      doOnceMoveTask.current = false
-      recoveredMoveTaskMutations.current = recoverAndPurgeMoveTaskMutations()
+    const doOnceMoveGoal = useRef(true)
+    if (doOnceMoveGoal.current) {
+      doOnceMoveGoal.current = false
+      recoveredMoveGoalMutations.current = recoverAndPurgeMoveGoalMutations()
     }
 
     // User facing state that only includes the pending mutations that
     // have not been observed.
-    const [unobservedPendingMoveTaskMutations, setUnobservedPendingMoveTaskMutations] =
-      useState<__resembleMutation<MoveTaskRequest>[]>([]);
+    const [unobservedPendingMoveGoalMutations, setUnobservedPendingMoveGoalMutations] =
+      useState<__resembleMutation<MoveGoalRequest>[]>([]);
 
     useEffect(() => {
-      shouldClearFailedMoveTaskMutations.current = true;
-    }, [failedMoveTaskMutations]);
+      shouldClearFailedMoveGoalMutations.current = true;
+    }, [failedMoveGoalMutations]);
 
-    async function __MoveTask(
-      mutation: __resembleMutation<MoveTaskRequest>
-    ): Promise<__resembleResponseOrError<MoveTaskResponse>> {
+    async function __MoveGoal(
+      mutation: __resembleMutation<MoveGoalRequest>
+    ): Promise<__resembleResponseOrError<MoveGoalResponse>> {
       try {
         // Invariant that we won't yield to event loop before pushing to
-        // runningMoveTaskMutations
-        runningMoveTaskMutations.current.push(mutation)
-        return _Mutation<MoveTaskRequest, MoveTaskResponse>(
+        // runningMoveGoalMutations
+        runningMoveGoalMutations.current.push(mutation)
+        return _Mutation<MoveGoalRequest, MoveGoalResponse>(
           // Invariant here is that we use the '/package.service.method'.
           //
           // See also 'resemble/helpers.py'.
-          "/twentyfive.TwentyFive.MoveTask",
+          "/twentyfive.TwentyFive.MoveGoal",
           mutation,
           mutation.request,
           mutation.idempotencyKey,
-          setUnobservedPendingMoveTaskMutations,
+          setUnobservedPendingMoveGoalMutations,
           abortController,
-          shouldClearFailedMoveTaskMutations,
-          setFailedMoveTaskMutations,
-          runningMoveTaskMutations,
+          shouldClearFailedMoveGoalMutations,
+          setFailedMoveGoalMutations,
+          runningMoveGoalMutations,
           flushMutations,
           queuedMutations,
-          MoveTaskRequest,
-          MoveTaskResponse.fromJson
+          MoveGoalRequest,
+          MoveGoalResponse.fromJson
         );
       } finally {
-        runningMoveTaskMutations.current = runningMoveTaskMutations.current.filter(
+        runningMoveGoalMutations.current = runningMoveGoalMutations.current.filter(
           ({ idempotencyKey }) => mutation.idempotencyKey !== idempotencyKey
         );
 
         __resemblePopMutationMaybeFromLocalStorage(
           localStorageKeyRef.current,
-          "MoveTask",
+          "MoveGoal",
           (mutationRequest: __resembleMutation<Request>) =>
             mutationRequest.idempotencyKey !== mutation.idempotencyKey
         );
@@ -804,8 +804,8 @@ function hasRunningMutations(): boolean {
 
       }
     }
-    async function _MoveTask(mutation: __resembleMutation<MoveTaskRequest>) {
-      setUnobservedPendingMoveTaskMutations(
+    async function _MoveGoal(mutation: __resembleMutation<MoveGoalRequest>) {
+      setUnobservedPendingMoveGoalMutations(
         (mutations) => [...mutations, mutation]
       )
 
@@ -818,35 +818,35 @@ function hasRunningMutations(): boolean {
         queuedMutations.current.length > 0 ||
         flushMutations.current !== undefined
       ) {
-        const deferred = new __resembleReactDeferred<__resembleResponseOrError<MoveTaskResponse>>(() =>
-          __MoveTask(mutation)
+        const deferred = new __resembleReactDeferred<__resembleResponseOrError<MoveGoalResponse>>(() =>
+          __MoveGoal(mutation)
         );
 
         // Add to localStorage here.
-        queuedMoveTaskMutations.current.push([mutation, () => deferred.start()]);
+        queuedMoveGoalMutations.current.push([mutation, () => deferred.start()]);
         queuedMutations.current.push(() => {
-          for (const [, run] of queuedMoveTaskMutations.current) {
-            queuedMoveTaskMutations.current.shift();
+          for (const [, run] of queuedMoveGoalMutations.current) {
+            queuedMoveGoalMutations.current.shift();
             run();
             break;
           }
         });
         // Maybe add to localStorage.
-        __resemblePushMutationMaybeToLocalStorage(localStorageKeyRef.current, "MoveTask", mutation);
+        __resemblePushMutationMaybeToLocalStorage(localStorageKeyRef.current, "MoveGoal", mutation);
 
         return deferred.promise;
       } else {
-        // NOTE: we'll add this mutation to `runningMoveTaskMutations` in `__MoveTask`
+        // NOTE: we'll add this mutation to `runningMoveGoalMutations` in `__MoveGoal`
         // without yielding to event loop so that we are guaranteed atomicity with checking `hasRunningMutations()`.
-        return await __MoveTask(mutation);
+        return await __MoveGoal(mutation);
       }
     }
 
-    async function MoveTask(
-      partialRequest: __bufbuildProtobufPartialMessage<MoveTaskRequest>, optimistic_metadata?: any
-    ): Promise<__resembleResponseOrError<MoveTaskResponse>> {
+    async function MoveGoal(
+      partialRequest: __bufbuildProtobufPartialMessage<MoveGoalRequest>, optimistic_metadata?: any
+    ): Promise<__resembleResponseOrError<MoveGoalResponse>> {
       const idempotencyKey = uuidv4();
-      const request = partialRequest instanceof MoveTaskRequest ? partialRequest : new MoveTaskRequest(partialRequest);
+      const request = partialRequest instanceof MoveGoalRequest ? partialRequest : new MoveGoalRequest(partialRequest);
 
       const mutation = {
         request,
@@ -855,92 +855,92 @@ function hasRunningMutations(): boolean {
         isLoading: false, // Won't start loading if we're flushing mutations.
       };
 
-      return _MoveTask(mutation);
+      return _MoveGoal(mutation);
     }
 
-    const runningDeleteTaskMutations = useRef<__resembleMutation<DeleteTaskRequest>[]>([]);
-    const recoveredDeleteTaskMutations = useRef<
-      [__resembleMutation<DeleteTaskRequest>, () => void][]
+    const runningDeleteGoalMutations = useRef<__resembleMutation<DeleteGoalRequest>[]>([]);
+    const recoveredDeleteGoalMutations = useRef<
+      [__resembleMutation<DeleteGoalRequest>, () => void][]
     >([]);
-    const shouldClearFailedDeleteTaskMutations = useRef(false);
-    const [failedDeleteTaskMutations, setFailedDeleteTaskMutations] = useState<
-      __resembleMutation<DeleteTaskRequest>[]
+    const shouldClearFailedDeleteGoalMutations = useRef(false);
+    const [failedDeleteGoalMutations, setFailedDeleteGoalMutations] = useState<
+      __resembleMutation<DeleteGoalRequest>[]
     >([]);
-    const queuedDeleteTaskMutations = useRef<[__resembleMutation<DeleteTaskRequest>, () => void][]>(
+    const queuedDeleteGoalMutations = useRef<[__resembleMutation<DeleteGoalRequest>, () => void][]>(
       []
     );
-    const recoverAndPurgeDeleteTaskMutations = (): [
-      __resembleMutation<DeleteTaskRequest>,
+    const recoverAndPurgeDeleteGoalMutations = (): [
+      __resembleMutation<DeleteGoalRequest>,
       () => void
     ][] => {
       if (localStorageKeyRef.current === undefined) {
         return [];
       }
-      const suffix = DeleteTask
+      const suffix = DeleteGoal
       const value = localStorage.getItem(localStorageKeyRef.current + suffix);
       if (value === null) {
         return [];
       }
 
       localStorage.removeItem(localStorageKeyRef.current);
-      const mutations: __resembleMutation<DeleteTaskRequest>[] = JSON.parse(value);
-      const recoveredDeleteTaskMutations: [
-        __resembleMutation<DeleteTaskRequest>,
+      const mutations: __resembleMutation<DeleteGoalRequest>[] = JSON.parse(value);
+      const recoveredDeleteGoalMutations: [
+        __resembleMutation<DeleteGoalRequest>,
         () => void
       ][] = [];
       for (const mutation of mutations) {
-        recoveredDeleteTaskMutations.push([mutation, () => __DeleteTask(mutation)]);
+        recoveredDeleteGoalMutations.push([mutation, () => __DeleteGoal(mutation)]);
       }
-      return recoveredDeleteTaskMutations;
+      return recoveredDeleteGoalMutations;
     }
-    const doOnceDeleteTask = useRef(true)
-    if (doOnceDeleteTask.current) {
-      doOnceDeleteTask.current = false
-      recoveredDeleteTaskMutations.current = recoverAndPurgeDeleteTaskMutations()
+    const doOnceDeleteGoal = useRef(true)
+    if (doOnceDeleteGoal.current) {
+      doOnceDeleteGoal.current = false
+      recoveredDeleteGoalMutations.current = recoverAndPurgeDeleteGoalMutations()
     }
 
     // User facing state that only includes the pending mutations that
     // have not been observed.
-    const [unobservedPendingDeleteTaskMutations, setUnobservedPendingDeleteTaskMutations] =
-      useState<__resembleMutation<DeleteTaskRequest>[]>([]);
+    const [unobservedPendingDeleteGoalMutations, setUnobservedPendingDeleteGoalMutations] =
+      useState<__resembleMutation<DeleteGoalRequest>[]>([]);
 
     useEffect(() => {
-      shouldClearFailedDeleteTaskMutations.current = true;
-    }, [failedDeleteTaskMutations]);
+      shouldClearFailedDeleteGoalMutations.current = true;
+    }, [failedDeleteGoalMutations]);
 
-    async function __DeleteTask(
-      mutation: __resembleMutation<DeleteTaskRequest>
-    ): Promise<__resembleResponseOrError<DeleteTaskResponse>> {
+    async function __DeleteGoal(
+      mutation: __resembleMutation<DeleteGoalRequest>
+    ): Promise<__resembleResponseOrError<DeleteGoalResponse>> {
       try {
         // Invariant that we won't yield to event loop before pushing to
-        // runningDeleteTaskMutations
-        runningDeleteTaskMutations.current.push(mutation)
-        return _Mutation<DeleteTaskRequest, DeleteTaskResponse>(
+        // runningDeleteGoalMutations
+        runningDeleteGoalMutations.current.push(mutation)
+        return _Mutation<DeleteGoalRequest, DeleteGoalResponse>(
           // Invariant here is that we use the '/package.service.method'.
           //
           // See also 'resemble/helpers.py'.
-          "/twentyfive.TwentyFive.DeleteTask",
+          "/twentyfive.TwentyFive.DeleteGoal",
           mutation,
           mutation.request,
           mutation.idempotencyKey,
-          setUnobservedPendingDeleteTaskMutations,
+          setUnobservedPendingDeleteGoalMutations,
           abortController,
-          shouldClearFailedDeleteTaskMutations,
-          setFailedDeleteTaskMutations,
-          runningDeleteTaskMutations,
+          shouldClearFailedDeleteGoalMutations,
+          setFailedDeleteGoalMutations,
+          runningDeleteGoalMutations,
           flushMutations,
           queuedMutations,
-          DeleteTaskRequest,
-          DeleteTaskResponse.fromJson
+          DeleteGoalRequest,
+          DeleteGoalResponse.fromJson
         );
       } finally {
-        runningDeleteTaskMutations.current = runningDeleteTaskMutations.current.filter(
+        runningDeleteGoalMutations.current = runningDeleteGoalMutations.current.filter(
           ({ idempotencyKey }) => mutation.idempotencyKey !== idempotencyKey
         );
 
         __resemblePopMutationMaybeFromLocalStorage(
           localStorageKeyRef.current,
-          "DeleteTask",
+          "DeleteGoal",
           (mutationRequest: __resembleMutation<Request>) =>
             mutationRequest.idempotencyKey !== mutation.idempotencyKey
         );
@@ -948,8 +948,8 @@ function hasRunningMutations(): boolean {
 
       }
     }
-    async function _DeleteTask(mutation: __resembleMutation<DeleteTaskRequest>) {
-      setUnobservedPendingDeleteTaskMutations(
+    async function _DeleteGoal(mutation: __resembleMutation<DeleteGoalRequest>) {
+      setUnobservedPendingDeleteGoalMutations(
         (mutations) => [...mutations, mutation]
       )
 
@@ -962,35 +962,35 @@ function hasRunningMutations(): boolean {
         queuedMutations.current.length > 0 ||
         flushMutations.current !== undefined
       ) {
-        const deferred = new __resembleReactDeferred<__resembleResponseOrError<DeleteTaskResponse>>(() =>
-          __DeleteTask(mutation)
+        const deferred = new __resembleReactDeferred<__resembleResponseOrError<DeleteGoalResponse>>(() =>
+          __DeleteGoal(mutation)
         );
 
         // Add to localStorage here.
-        queuedDeleteTaskMutations.current.push([mutation, () => deferred.start()]);
+        queuedDeleteGoalMutations.current.push([mutation, () => deferred.start()]);
         queuedMutations.current.push(() => {
-          for (const [, run] of queuedDeleteTaskMutations.current) {
-            queuedDeleteTaskMutations.current.shift();
+          for (const [, run] of queuedDeleteGoalMutations.current) {
+            queuedDeleteGoalMutations.current.shift();
             run();
             break;
           }
         });
         // Maybe add to localStorage.
-        __resemblePushMutationMaybeToLocalStorage(localStorageKeyRef.current, "DeleteTask", mutation);
+        __resemblePushMutationMaybeToLocalStorage(localStorageKeyRef.current, "DeleteGoal", mutation);
 
         return deferred.promise;
       } else {
-        // NOTE: we'll add this mutation to `runningDeleteTaskMutations` in `__DeleteTask`
+        // NOTE: we'll add this mutation to `runningDeleteGoalMutations` in `__DeleteGoal`
         // without yielding to event loop so that we are guaranteed atomicity with checking `hasRunningMutations()`.
-        return await __DeleteTask(mutation);
+        return await __DeleteGoal(mutation);
       }
     }
 
-    async function DeleteTask(
-      partialRequest: __bufbuildProtobufPartialMessage<DeleteTaskRequest>, optimistic_metadata?: any
-    ): Promise<__resembleResponseOrError<DeleteTaskResponse>> {
+    async function DeleteGoal(
+      partialRequest: __bufbuildProtobufPartialMessage<DeleteGoalRequest>, optimistic_metadata?: any
+    ): Promise<__resembleResponseOrError<DeleteGoalResponse>> {
       const idempotencyKey = uuidv4();
-      const request = partialRequest instanceof DeleteTaskRequest ? partialRequest : new DeleteTaskRequest(partialRequest);
+      const request = partialRequest instanceof DeleteGoalRequest ? partialRequest : new DeleteGoalRequest(partialRequest);
 
       const mutation = {
         request,
@@ -999,7 +999,7 @@ function hasRunningMutations(): boolean {
         isLoading: false, // Won't start loading if we're flushing mutations.
       };
 
-      return _DeleteTask(mutation);
+      return _DeleteGoal(mutation);
     }
 
     useEffect(() => {
@@ -1011,7 +1011,7 @@ function hasRunningMutations(): boolean {
           try {// Wait for any mutations to complete before starting to
             // read so that we read the latest state including those
             // mutations.
-            if (runningCreateTaskListMutations.current.length > 0 || runningAddTaskMutations.current.length > 0 || runningMoveTaskMutations.current.length > 0 || runningDeleteTaskMutations.current.length > 0) {
+            if (runningCreateGoalListMutations.current.length > 0 || runningAddGoalMutations.current.length > 0 || runningMoveGoalMutations.current.length > 0 || runningDeleteGoalMutations.current.length > 0) {
               // TODO(benh): check invariant
               // 'flushMutations.current !== undefined' but don't
               // throw an error since that will just retry, instead
@@ -1023,7 +1023,7 @@ function hasRunningMutations(): boolean {
 
             const responses = ReactQuery(
               __resembleQueryRequest.create({
-                method: "ListTasks",
+                method: "ListGoals",
                 request: requestRef.current.toBinary(),
               }),
               abortController?.signal
@@ -1042,10 +1042,10 @@ function hasRunningMutations(): boolean {
                 observedIdempotencyKeys.current,
                 (observedIdempotencyKey) =>
                   [
-                  ...runningCreateTaskListMutations.current,
-                  ...runningAddTaskMutations.current,
-                  ...runningMoveTaskMutations.current,
-                  ...runningDeleteTaskMutations.current,
+                  ...runningCreateGoalListMutations.current,
+                  ...runningAddGoalMutations.current,
+                  ...runningMoveGoalMutations.current,
+                  ...runningDeleteGoalMutations.current,
                   ].some(
                     (mutation) =>
                       observedIdempotencyKey === mutation.idempotencyKey
@@ -1069,22 +1069,22 @@ function hasRunningMutations(): boolean {
                 }
               }
 
-              setUnobservedPendingCreateTaskListMutations(
+              setUnobservedPendingCreateGoalListMutations(
               (mutations) =>
                 mutations
                   .filter(
                     (mutation) =>
                       // Only keep mutations that are queued, pending or
                       // recovered.
-                      queuedCreateTaskListMutations.current.some(
-                        ([queuedCreateTaskListMutation]) =>
+                      queuedCreateGoalListMutations.current.some(
+                        ([queuedCreateGoalListMutation]) =>
                           mutation.idempotencyKey ===
-                          queuedCreateTaskListMutation.idempotencyKey
+                          queuedCreateGoalListMutation.idempotencyKey
                       ) ||
-                      runningCreateTaskListMutations.current.some(
-                        (runningCreateTaskListMutations) =>
+                      runningCreateGoalListMutations.current.some(
+                        (runningCreateGoalListMutations) =>
                           mutation.idempotencyKey ===
-                          runningCreateTaskListMutations.idempotencyKey
+                          runningCreateGoalListMutations.idempotencyKey
                       )
                   )
                   .filter(
@@ -1096,22 +1096,22 @@ function hasRunningMutations(): boolean {
                   )
               )
 
-              setUnobservedPendingAddTaskMutations(
+              setUnobservedPendingAddGoalMutations(
               (mutations) =>
                 mutations
                   .filter(
                     (mutation) =>
                       // Only keep mutations that are queued, pending or
                       // recovered.
-                      queuedAddTaskMutations.current.some(
-                        ([queuedAddTaskMutation]) =>
+                      queuedAddGoalMutations.current.some(
+                        ([queuedAddGoalMutation]) =>
                           mutation.idempotencyKey ===
-                          queuedAddTaskMutation.idempotencyKey
+                          queuedAddGoalMutation.idempotencyKey
                       ) ||
-                      runningAddTaskMutations.current.some(
-                        (runningAddTaskMutations) =>
+                      runningAddGoalMutations.current.some(
+                        (runningAddGoalMutations) =>
                           mutation.idempotencyKey ===
-                          runningAddTaskMutations.idempotencyKey
+                          runningAddGoalMutations.idempotencyKey
                       )
                   )
                   .filter(
@@ -1123,22 +1123,22 @@ function hasRunningMutations(): boolean {
                   )
               )
 
-              setUnobservedPendingMoveTaskMutations(
+              setUnobservedPendingMoveGoalMutations(
               (mutations) =>
                 mutations
                   .filter(
                     (mutation) =>
                       // Only keep mutations that are queued, pending or
                       // recovered.
-                      queuedMoveTaskMutations.current.some(
-                        ([queuedMoveTaskMutation]) =>
+                      queuedMoveGoalMutations.current.some(
+                        ([queuedMoveGoalMutation]) =>
                           mutation.idempotencyKey ===
-                          queuedMoveTaskMutation.idempotencyKey
+                          queuedMoveGoalMutation.idempotencyKey
                       ) ||
-                      runningMoveTaskMutations.current.some(
-                        (runningMoveTaskMutations) =>
+                      runningMoveGoalMutations.current.some(
+                        (runningMoveGoalMutations) =>
                           mutation.idempotencyKey ===
-                          runningMoveTaskMutations.idempotencyKey
+                          runningMoveGoalMutations.idempotencyKey
                       )
                   )
                   .filter(
@@ -1150,22 +1150,22 @@ function hasRunningMutations(): boolean {
                   )
               )
 
-              setUnobservedPendingDeleteTaskMutations(
+              setUnobservedPendingDeleteGoalMutations(
               (mutations) =>
                 mutations
                   .filter(
                     (mutation) =>
                       // Only keep mutations that are queued, pending or
                       // recovered.
-                      queuedDeleteTaskMutations.current.some(
-                        ([queuedDeleteTaskMutation]) =>
+                      queuedDeleteGoalMutations.current.some(
+                        ([queuedDeleteGoalMutation]) =>
                           mutation.idempotencyKey ===
-                          queuedDeleteTaskMutation.idempotencyKey
+                          queuedDeleteGoalMutation.idempotencyKey
                       ) ||
-                      runningDeleteTaskMutations.current.some(
-                        (runningDeleteTaskMutations) =>
+                      runningDeleteGoalMutations.current.some(
+                        (runningDeleteGoalMutations) =>
                           mutation.idempotencyKey ===
-                          runningDeleteTaskMutations.idempotencyKey
+                          runningDeleteGoalMutations.idempotencyKey
                       )
                   )
                   .filter(
@@ -1178,7 +1178,7 @@ function hasRunningMutations(): boolean {
               )
 
 
-              setResponse(ListTasksResponse.fromBinary(response.response));
+              setResponse(ListGoalsResponse.fromBinary(response.response));
             }
           } catch (e: unknown) {
             if (abortController?.signal.aborted) {
@@ -1220,70 +1220,70 @@ function hasRunningMutations(): boolean {
       isLoading,
       error,
       mutations: {
-        CreateTaskList,
-        AddTask,
-        MoveTask,
-        DeleteTask,
+        CreateGoalList,
+        AddGoal,
+        MoveGoal,
+        DeleteGoal,
       },
-      pendingCreateTaskListMutations: unobservedPendingCreateTaskListMutations,
-      failedCreateTaskListMutations,
-      recoveredCreateTaskListMutations: recoveredCreateTaskListMutations.current.map(
+      pendingCreateGoalListMutations: unobservedPendingCreateGoalListMutations,
+      failedCreateGoalListMutations,
+      recoveredCreateGoalListMutations: recoveredCreateGoalListMutations.current.map(
         ([mutation, run]) => ({ ...mutation, run: run })
       ),
-      pendingAddTaskMutations: unobservedPendingAddTaskMutations,
-      failedAddTaskMutations,
-      recoveredAddTaskMutations: recoveredAddTaskMutations.current.map(
+      pendingAddGoalMutations: unobservedPendingAddGoalMutations,
+      failedAddGoalMutations,
+      recoveredAddGoalMutations: recoveredAddGoalMutations.current.map(
         ([mutation, run]) => ({ ...mutation, run: run })
       ),
-      pendingMoveTaskMutations: unobservedPendingMoveTaskMutations,
-      failedMoveTaskMutations,
-      recoveredMoveTaskMutations: recoveredMoveTaskMutations.current.map(
+      pendingMoveGoalMutations: unobservedPendingMoveGoalMutations,
+      failedMoveGoalMutations,
+      recoveredMoveGoalMutations: recoveredMoveGoalMutations.current.map(
         ([mutation, run]) => ({ ...mutation, run: run })
       ),
-      pendingDeleteTaskMutations: unobservedPendingDeleteTaskMutations,
-      failedDeleteTaskMutations,
-      recoveredDeleteTaskMutations: recoveredDeleteTaskMutations.current.map(
+      pendingDeleteGoalMutations: unobservedPendingDeleteGoalMutations,
+      failedDeleteGoalMutations,
+      recoveredDeleteGoalMutations: recoveredDeleteGoalMutations.current.map(
         ([mutation, run]) => ({ ...mutation, run: run })
       ),
     };
   };
 
 
-  const AddTask = async (partialRequest: __bufbuildProtobufPartialMessage<AddTaskRequest> = {}) => {
-    const request = partialRequest instanceof AddTaskRequest ? partialRequest : new AddTaskRequest(partialRequest);
+  const AddGoal = async (partialRequest: __bufbuildProtobufPartialMessage<AddGoalRequest> = {}) => {
+    const request = partialRequest instanceof AddGoalRequest ? partialRequest : new AddGoalRequest(partialRequest);
     const requestBody = request.toJson();
     // Invariant here is that we use the '/package.service.method' path and
     // HTTP 'POST' method (we need 'POST' because we send an HTTP body).
     //
     // See also 'resemble/helpers.py'.
     const response = await guardedFetch(
-      newRequest(requestBody, "/twentyfive.TwentyFive.AddTask", "POST"));
+      newRequest(requestBody, "/twentyfive.TwentyFive.AddGoal", "POST"));
 
     return await response.json();
   };
 
-  const MoveTask = async (partialRequest: __bufbuildProtobufPartialMessage<MoveTaskRequest> = {}) => {
-    const request = partialRequest instanceof MoveTaskRequest ? partialRequest : new MoveTaskRequest(partialRequest);
+  const MoveGoal = async (partialRequest: __bufbuildProtobufPartialMessage<MoveGoalRequest> = {}) => {
+    const request = partialRequest instanceof MoveGoalRequest ? partialRequest : new MoveGoalRequest(partialRequest);
     const requestBody = request.toJson();
     // Invariant here is that we use the '/package.service.method' path and
     // HTTP 'POST' method (we need 'POST' because we send an HTTP body).
     //
     // See also 'resemble/helpers.py'.
     const response = await guardedFetch(
-      newRequest(requestBody, "/twentyfive.TwentyFive.MoveTask", "POST"));
+      newRequest(requestBody, "/twentyfive.TwentyFive.MoveGoal", "POST"));
 
     return await response.json();
   };
 
-  const DeleteTask = async (partialRequest: __bufbuildProtobufPartialMessage<DeleteTaskRequest> = {}) => {
-    const request = partialRequest instanceof DeleteTaskRequest ? partialRequest : new DeleteTaskRequest(partialRequest);
+  const DeleteGoal = async (partialRequest: __bufbuildProtobufPartialMessage<DeleteGoalRequest> = {}) => {
+    const request = partialRequest instanceof DeleteGoalRequest ? partialRequest : new DeleteGoalRequest(partialRequest);
     const requestBody = request.toJson();
     // Invariant here is that we use the '/package.service.method' path and
     // HTTP 'POST' method (we need 'POST' because we send an HTTP body).
     //
     // See also 'resemble/helpers.py'.
     const response = await guardedFetch(
-      newRequest(requestBody, "/twentyfive.TwentyFive.DeleteTask", "POST"));
+      newRequest(requestBody, "/twentyfive.TwentyFive.DeleteGoal", "POST"));
 
     return await response.json();
   };
@@ -1291,8 +1291,8 @@ function hasRunningMutations(): boolean {
 
 async function _Mutation<
     Request extends
-CreateTaskListRequest    |AddTaskRequest    |MoveTaskRequest    |DeleteTaskRequest,
-    Response extends    CreateTaskListResponse    |    AddTaskResponse    |    MoveTaskResponse    |    DeleteTaskResponse  >(
+CreateGoalListRequest    |AddGoalRequest    |MoveGoalRequest    |DeleteGoalRequest,
+    Response extends    CreateGoalListResponse    |    AddGoalResponse    |    MoveGoalResponse    |    DeleteGoalResponse  >(
     path: string,
     mutation: __resembleMutation<Request>,
     request: Request,
@@ -1491,12 +1491,12 @@ CreateTaskListRequest    |AddTaskRequest    |MoveTaskRequest    |DeleteTaskReque
   }
 
   return {
-    CreateTaskList,
-    ListTasks,
-    useListTasks,
-    AddTask,
-    MoveTask,
-    DeleteTask,
+    CreateGoalList,
+    ListGoals,
+    useListGoals,
+    AddGoal,
+    MoveGoal,
+    DeleteGoal,
   };
 };
 

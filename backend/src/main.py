@@ -1,25 +1,25 @@
 import asyncio
 import logging
-from hello.v1.hello_rsm import Hello
-from hello_servicer import HelloServicer
+from twentyfive.twentyfive_rsm import TwentyFive
+from twentyfive_servicer import TwentyFiveServicer
 from resemble.aio.applications import Application
 from resemble.aio.workflows import Workflow
 
 logging.basicConfig(level=logging.INFO)
 
-EXAMPLE_STATE_MACHINE_ID = 'resemble-hello'
+STATE_MACHINE_ID = 'twentyfive12'
 
 
 async def initialize(workflow: Workflow):
-    hello = Hello(EXAMPLE_STATE_MACHINE_ID)
+    twentyfive = TwentyFive(STATE_MACHINE_ID)
 
-    # Implicitly construct state machine upon first write.
-    await hello.Send(workflow, message="Hello, World!")
+    # Is this needed?
+    await twentyfive.AddTask(workflow, task="Eat 10 chickens")
 
 
 async def main():
     application = Application(
-        servicers=[HelloServicer],
+        servicers=[TwentyFiveServicer],
         initialize=initialize,
     )
 

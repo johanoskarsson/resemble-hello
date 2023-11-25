@@ -50,7 +50,9 @@ dev --env=PYTHONPATH=api/
 dev --python
 
 # Save state between chaos restarts.
-dev --name=hello
+dev --name=twentyfive12
+
+dev --no-chaos
 
 # Run the application!
 dev backend/src/main.py

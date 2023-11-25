@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+package twentyfive;
+
+import "resemble/v1alpha1/options.proto";
+
+////////////////////////////////////////////////////////////////////////
+
+service TwentyFive {
+  option (resemble.v1alpha1.service).state = "TwentyFiveState";
+
+  rpc CreateTaskList(CreateTaskListRequest) returns (CreateTaskListResponse) {
+    option (resemble.v1alpha1.method).writer = {
+      constructor: true,
+    };
+  }
+
+  rpc ListTasks(ListTasksRequest) returns (ListTasksResponse) {
+    option (resemble.v1alpha1.method).reader = {
+    };
+  }
+
+  rpc AddTask(AddTaskRequest) returns (AddTaskResponse) {
+    option (resemble.v1alpha1.method).writer = {
+    };
+  }
+
+  rpc MoveTask(MoveTaskRequest) returns (MoveTaskResponse) {
+    option (resemble.v1alpha1.method).writer = {
+    };
+  }
+
+  rpc DeleteTask(DeleteTaskRequest) returns (DeleteTaskResponse) {
+    option (resemble.v1alpha1.method).writer = {
+    };
+  }
+}
+
+message TwentyFiveState {
+  repeated string tasks = 1;
+}
+
+message CreateTaskListRequest {}
+message CreateTaskListResponse {}
+
+message ListTasksRequest {}
+message ListTasksResponse {
+  repeated string tasks = 1;
+}
+
+message AddTaskRequest {
+  string task = 1;
+}
+message AddTaskResponse {}
+
+message MoveTaskRequest {
+  string task = 1;
+  int32 targetIndex = 2;
+}
+message MoveTaskResponse {}
+
+message DeleteTaskRequest {
+  string task = 1;
+}
+message DeleteTaskResponse {}

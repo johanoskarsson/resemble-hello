@@ -1,51 +1,38 @@
-import { FC, useState } from "react";
-import css from "./App.module.css";
-import { Hello } from "./gen/hello/v1/hello_rsm_react";
-// We can choose any id we want because the state will be constructed when we
-// make the first .writer call.
-const STATE_MACHINE_ID = "resemble-hello";
+import { TwentyFive } from "./gen/twentyfive/twentyfive_rsm_react";
+import { STATE_MACHINE_ID } from "./const";
 
-const Message: FC<{ text: string }> = ({ text }) => {
-  return <div className={css.message}>{text}</div>;
-};
+import Grid from '@mui/material/Grid';
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
+
+import TaskList from "./TaskList";
+import AddTaskForm from "./AddTaskForm";
+
+import Instructions from "./Instructions";
 
 const App = () => {
-  // State of the input component.
-  const [message, setMessage] = useState("Hello, Resemble!");
+  return null;
+  // const { useListTasks } = TwentyFive({ id: STATE_MACHINE_ID });
+  // const { response } = useListTasks();
 
-  const { useMessages } = Hello({ id: STATE_MACHINE_ID });
-  const {
-    response,
-    mutations: { Send },
-  } = useMessages();
+  // let tasksCount = response === undefined ? 0 : response.tasks.length;
 
-  const handleClick = () => {
-    Send({ message: message }).then(() => setMessage(""));
-  };
-
-  return (
-    <div className={css.messages}>
-      <input
-        type="text"
-        className={css.textInput}
-        onChange={(e) => setMessage(e.target.value)}
-        value={message}
-        placeholder="<your message here>"
-      />
-      <button
-        className={message === "" ? css.buttonDisabled : css.buttonEnabled}
-        onClick={handleClick}
-        disabled={message === ""}
-      >
-        Send
-      </button>
-      {response !== undefined &&
-        response.messages.length > 0 &&
-        response.messages.map((message: string) => (
-          <Message text={message} key={message} />
-        ))}
-    </div>
-  );
+  // return (
+  //   <Container>
+  //     <Grid container justifyContent="center" rowSpacing={1} columnSpacing={24}>
+  //       <Grid item xs={8}>
+  //         <Typography variant="h1" gutterBottom align="center">TwentyFive</Typography>
+  //       </Grid>
+  //       <Grid item xs={6}>
+  //         <Instructions tasksCount={tasksCount}/>
+  //       </Grid>
+  //       <Grid item xs={6}>
+  //       {(tasksCount < 25) ? <AddTaskForm/> : null}
+  //         <TaskList/>
+  //       </Grid>
+  //     </Grid>
+  //   </Container>
+  // );
 };
 
 export default App;

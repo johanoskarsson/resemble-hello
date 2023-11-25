@@ -54,10 +54,9 @@ class TwentyFiveServicer(TwentyFive.Interface):
         request: MoveGoalRequest,
     ) -> TwentyFive.MoveGoalEffects:
         goal = request.goal
-        # TODO 
-        # TODO how to read the state to verify that this does not already exist?
-        state.goals.extend([goal])
-        return TwentyFive.AddGoalEffects(state=state, response=MoveGoalResponse())
+        state.goals.remove(goal)
+        state.goals.insert(request.targetIndex, goal)
+        return TwentyFive.MoveGoalEffects(state=state, response=MoveGoalResponse())
 
     async def DeleteGoal(
         self,

@@ -1,9 +1,6 @@
 import * as React from 'react';
 import { Draggable } from 'react-beautiful-dnd';
 
-import { TwentyFive } from "./gen/twentyfive/twentyfive_rsm_react";
-import { STATE_MACHINE_ID } from "./const";
-
 import ListItem from '@mui/material/ListItem';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemText from '@mui/material/ListItemText';
@@ -20,17 +17,12 @@ import DeleteIcon from '@mui/icons-material/Delete';
 export type DraggableListItemProps = {
   item: string;
   index: number;
-};
+  DeleteItem: any;
+}
 
-const DraggableListItem = ({ item, index }: DraggableListItemProps) => {
-  const { useListGoals } = TwentyFive({ id: STATE_MACHINE_ID });
-  const {
-    response,
-    mutations: { DeleteGoal },
-  } = useListGoals();
-  
+const DraggableListItem = ({ item, index, DeleteItem }: DraggableListItemProps) => {
   const handleClick = (goal: string) => {
-    DeleteGoal({ goal: goal });
+    DeleteItem({ goal: goal });
   };
 
   return (

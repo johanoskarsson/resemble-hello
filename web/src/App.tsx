@@ -12,9 +12,16 @@ import Instructions from "./Instructions";
 
 const App = () => {
   const { useListGoals } = TwentyFive({ id: STATE_MACHINE_ID });
-  const { response } = useListGoals();
+  const {
+    response,
+    mutations: {
+      AddGoal,
+      DeleteGoal,
+      MoveGoal
+    },
+  } = useListGoals();
 
-  let goalsCount = response === undefined ? 0 : response.goals.length;
+  const goals = response === undefined ? [] : response.goals;
 
   return (
     <Container>
@@ -23,11 +30,11 @@ const App = () => {
           <Typography variant="h1" gutterBottom align="center">TwentyFive</Typography>
         </Grid>
         <Grid item xs={6}>
-          <Instructions goalsCount={goalsCount}/>
+          <Instructions goals={goals}/>
         </Grid>
         <Grid item xs={6}>
-        {(goalsCount < 25) ? <AddGoalForm/> : null}
-          <GoalList/>
+        {(goals.length < 25) ? <AddGoalForm AddGoal={AddGoal}/> : null}
+        <GoalList goals={goals} MoveGoal={MoveGoal} DeleteGoal={DeleteGoal}/>
         </Grid>
       </Grid>
     </Container>

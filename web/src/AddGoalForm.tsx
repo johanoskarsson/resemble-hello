@@ -4,20 +4,21 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 
-import { TwentyFive } from "./gen/twentyfive/twentyfive_rsm_react";
+import type { PartialMessage } from "@bufbuild/protobuf";
+import { ResponseOrError } from "@reboot-dev/resemble-react";
+import {
+  AddGoalResponse,
+  AddGoalRequest,
+} from "./gen/twentyfive/twentyfive_rsm_react";
 
-import { STATE_MACHINE_ID } from "./const";
 
-
-const AddGoalForm = () => {
+const AddGoalForm = (
+  { AddGoal }: {
+    AddGoal: (request: PartialMessage<AddGoalRequest>) => Promise<ResponseOrError<AddGoalResponse>>
+  }
+) => {
   // State of the input component.
   const [goal, setGoal] = useState("");
-
-  const { useListGoals } = TwentyFive({ id: STATE_MACHINE_ID });
-  const {
-    response,
-    mutations: { AddGoal },
-  } = useListGoals();
 
   const handleClick = () => {
     AddGoal({ goal: goal }).then(() => setGoal(""));

@@ -1,34 +1,36 @@
-import { TwentyFive } from "./gen/twentyfive/twentyfive_rsm_react";
-
-import { STATE_MACHINE_ID } from "./const";
-
 import DraggableList from './DraggableList';
+import DraggableListItem from './DraggableListItem';
 import { DropResult } from 'react-beautiful-dnd';
+import type { PartialMessage } from "@bufbuild/protobuf";
+import { ResponseOrError } from "@reboot-dev/resemble-react";
+import {
+  DeleteGoalResponse,
+  DeleteGoalRequest,
+  MoveGoalResponse,
+  MoveGoalRequest,
+} from "./gen/twentyfive/twentyfive_rsm_react";
 
-const GoalList = () => {
-  const { useListGoals } = TwentyFive({ id: STATE_MACHINE_ID });
-  const {
-    response,
-    mutations: { MoveGoal },
-  } = useListGoals();
-  
+
+const GoalList = (
+  { goals, DeleteGoal, MoveGoal }: {
+    goals: string[],
+    DeleteGoal: (request: PartialMessage<DeleteGoalRequest>) => Promise<ResponseOrError<DeleteGoalResponse>>,
+    MoveGoal: (request: PartialMessage<MoveGoalRequest>) => Promise<ResponseOrError<MoveGoalResponse>>,
+  }
+) => {
   const onDragEnd = ({ destination, source }: DropResult) => {
     // dropped outside the list
     if (!destination) return;
 
-    if (response === undefined) {
-      return null;
-    }
-
-    MoveGoal({ goal: response.goals[source.index], targetIndex: destination.index})
+    MoveGoal({ goal: goals[source.index], targetIndex: destination.index})
   };
 
-  if (response === undefined) {
-    return null;
-  }
-
   return (
-    <DraggableList items={response.goals} onDragEnd={onDragEnd}/>
+    <DraggableList onDragEnd={onDragEnd}>
+      {goals.map((goal, index) => (
+        <DraggableListItem item={goal} index={index} key={`${goal}-${index}`} DeleteItem={DeleteGoal} />
+      ))}
+    </DraggableList>
   );
 }
 

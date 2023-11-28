@@ -1,7 +1,3 @@
-import { TwentyFive } from "./gen/twentyfive/twentyfive_rsm_react";
-
-import { STATE_MACHINE_ID } from "./const";
-
 import { useState } from "react";
 
 import Typography from '@mui/material/Typography';
@@ -13,14 +9,8 @@ import ListItemText from '@mui/material/ListItemText';
 import Avatar from '@mui/material/Avatar';
 import FormatListNumberedIcon from '@mui/icons-material/FormatListNumbered';
 
-const Instructions = ({ goalsCount: goalsCount }: { goalsCount: number }) => {
+const Instructions = ({ goals }: { goals: string[] }) => {
   const totalGoals = 25;
-
-  const { useListGoals } = TwentyFive({ id: STATE_MACHINE_ID });
-  const {
-    response
-  } = useListGoals();
-
 
   // show the final list
   const [show, setShow] = useState(false);
@@ -29,7 +19,7 @@ const Instructions = ({ goalsCount: goalsCount }: { goalsCount: number }) => {
     setShow(true)
   };  
 
-  if (goalsCount === 0) {
+  if (goals.length === 0) {
     return (
       <div>
         <Typography variant="body1" sx={{ fontWeight: 'bold' }} gutterBottom>
@@ -44,14 +34,14 @@ const Instructions = ({ goalsCount: goalsCount }: { goalsCount: number }) => {
     );
   }
 
-  if (goalsCount < totalGoals) {
+  if (goals.length < totalGoals) {
     return (
       <div>
         <Typography variant="body1" sx={{ fontWeight: 'bold' }} gutterBottom>
           We're getting there!
         </Typography>
         <Typography variant="body2">
-          We need {totalGoals-goalsCount} more goals! Keep adding!
+          We need {totalGoals-goals.length} more goals! Keep adding!
         </Typography>
       </div>
     );
@@ -76,7 +66,7 @@ const Instructions = ({ goalsCount: goalsCount }: { goalsCount: number }) => {
     );
   }
 
-  if (response !== undefined) {
+  if (goals.length > 0) {
     return (
       <div>
         <Typography variant="body1" sx={{ fontWeight: 'bold' }} gutterBottom>
@@ -87,7 +77,7 @@ const Instructions = ({ goalsCount: goalsCount }: { goalsCount: number }) => {
         </Typography>
 
         <List>
-        {response.goals.slice(0, 5).map((goal) => (
+        {goals.slice(0, 5).map((goal) => (
           <ListItem key={goal}>
           <ListItemAvatar>
             <Avatar>

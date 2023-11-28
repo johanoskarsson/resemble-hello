@@ -19,9 +19,22 @@ const App = () => {
       DeleteGoal,
       MoveGoal
     },
+    pendingMoveGoalMutations,
   } = useListGoals();
 
-  const goals = response === undefined ? [] : response.goals;
+  let goals = response === undefined ? [] : response.goals;
+
+  // Render goals optimistically by including pending mutations.
+  //
+  // NOTE: we only include move because adding and deleting isn't
+  // glitchy on it's own, but we'd probably want to include all
+  // of them in general!
+  if (pendingMoveGoalMutations !== undefined) {
+    for (const { request /*, isLoading, ... */ } of pendingMoveGoalMutations) {
+      goals = goals.filter((goal) => goal !== request.goal);
+      goals.splice(request.targetIndex, 0, request.goal);
+    }
+  }
 
   return (
     <Container>

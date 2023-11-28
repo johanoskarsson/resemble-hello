@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { MouseEvent, useState } from "react";
 
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
@@ -20,7 +20,11 @@ const AddGoalForm = (
   // State of the input component.
   const [goal, setGoal] = useState("");
 
-  const handleClick = () => {
+  const handleClick = (event: MouseEvent<HTMLElement>) => {
+    // Don't refresh/re-render the entire page on form submission so
+    // our app doesn't look glitchy.
+    event.preventDefault();
+
     AddGoal({ goal: goal }).then(() => setGoal(""));
   };
 
